@@ -1,0 +1,92 @@
+<style>
+  .profile-card {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+  }
+  
+  .card-header {
+    border-radius: 10px 10px 0 0 !important;
+    padding: 1.25rem;
+  }
+  
+  .user-details {
+    padding: 0 1rem;
+  }
+  
+  .detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .detail-label {
+    width: 40%;
+  }
+  
+  .detail-value {
+    width: 60%;
+    text-align: right;
+  }
+
+  .badge-success {
+    background-color: #28a745 !important;
+  }
+  
+  .badge-danger {
+    background-color: #dc3545 !important;
+  }
+  
+  @media (max-width: 576px) {
+    .detail-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .detail-label, 
+    .detail-value {
+      width: 100%;
+      text-align: left;
+    }
+    
+    .detail-value {
+      margin-top: 0.25rem;
+    }
+  }
+</style>
+
+
+
+                <div class="bg-white tw-px-8 tw-py-8 rounded-3">
+
+                    <div class="container py-5">
+                        <div class="card shadow-sm profile-card">
+                            <div class="card-header bg-primary text-white">
+                                <h2 class="h4 mb-0">Mon profil</h2>
+                            </div>
+                            
+                            <div class="card-body">
+                                <div class="user-details">
+                                    <div class="detail-item py-3 border-bottom">
+                                    <span class="detail-label font-weight-bold text-muted">Nom complet :</span>
+                                    <span class="detail-value"><%= current_user.nom %> <%= current_user.prenom %></span>
+                                    </div>
+                                    
+                                    <div class="detail-item py-3 border-bottom">
+                                    <span class="detail-label font-weight-bold text-muted">Email :</span>
+                                    <span class="detail-value"><%= current_user.email %></span>
+                                    </div>
+                                    
+                                  
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <%= link_to "Modifier mon profil", edit_user_registration_path, class: "btn btn-primary px-4" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>

@@ -1,0 +1,241 @@
+<header class="magjury-header">
+	<div class="magjury-header__inner">
+		<!-- Logo -->
+		<div class="magjury-logo">
+		<a href="/">
+            <%= image_tag 'logo.jpg'%>
+			<span class="magjury-logo__text">Magazine Juridique</span>
+		</a>
+		</div>
+
+		<!-- Navigation desktop -->
+		<nav class="magjury-nav">
+		<ul class="magjury-nav__list">
+			<li><a href="/" class="magjury-nav__link">Accueil</a></li>
+
+			<li>
+			<a href="<%=magazine_path%>" class="magjury-nav__link">
+				<span>Actualités</span>
+				<!-- <svg class="magjury-arrow" width="12" height="12" viewBox="0 0 12 12">
+				<path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+				</svg> -->
+			</a>
+			<!-- <div class="magjury-dropdown__container">
+				<ul class="magjury-dropdown__menu">
+				<li><a href="" class="magjury-dropdown__link">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+					<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+					<polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+					<line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+					<line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+					<polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+					</svg>
+					<span>Juridiques</span>
+				</a></li>
+				<li><a href="" class="magjury-dropdown__link">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+					<path d="M12 11a5 5 0 0 1 5 5v6H7v-6a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="2"/>
+					<path d="M12 1a3 3 0 0 1 3 3v2H9V4a3 3 0 0 1 3-3z" stroke="currentColor" stroke-width="2"/>
+					</svg>
+					<span>Judiciaires</span>
+				</a></li>
+				<li><a href="" class="magjury-dropdown__link">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+					<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke="currentColor" stroke-width="2"/>
+					<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke="currentColor" stroke-width="2"/>
+					</svg>
+					<span>Analyses</span>
+				</a></li>
+				</ul>
+			</div> -->
+			</li>
+
+			<li class="magjury-dropdown">
+			<a href="#" class="magjury-nav__link">
+				<span>Offres</span>
+				<svg class="magjury-arrow" width="12" height="12" viewBox="0 0 12 12">
+				<path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+				</svg>
+			</a>
+			<div class="magjury-dropdown__container">
+				<ul class="magjury-dropdown__menu">
+				<li><a href="" class="magjury-dropdown__link">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+					<path d="M9 19c-4.5 0-8-2.5-8-6s3.5-6 8-6 8 2.5 8 6-3.5 6-8 6z" stroke="currentColor" stroke-width="2"/>
+					<path d="M9 13c0 1.5 1.5 3 3 3s3-1.5 3-3-1.5-3-3-3-3 1.5-3 3z" stroke="currentColor" stroke-width="2"/>
+					</svg>
+					<span>Ventes aux enchères</span>
+				</a></li>
+				<li><a href="" class="magjury-dropdown__link">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+					<rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+					<path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="currentColor" stroke-width="2"/>
+					</svg>
+					<span>Offres de services</span>
+				</a></li>
+				<li><a href="" class="magjury-dropdown__link">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+					<path d="M20 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z" stroke="currentColor" stroke-width="2"/>
+					<path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="2"/>
+					</svg>
+					<span>Offres d'emploi</span>
+				</a></li>
+				</ul>
+			</div>
+			</li>
+
+			<li><a href="#" class="magjury-nav__link">Boutique</a></li>
+			<li><a href="#" class="magjury-nav__link">Forum</a></li>
+			<li><a href="#" class="magjury-nav__link">Contact</a></li>
+		</ul>
+		</nav>
+
+		<!-- Compte et recherche -->
+		<div class="magjury-actions">
+		<div class="magjury-search">
+			<button class="magjury-search__toggle" aria-label="Recherche">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+				<circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+				<path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+			</svg>
+			</button>
+			<div class="magjury-search__panel">
+			<form class="magjury-search__form">
+				<input type="text" placeholder="Rechercher..." class="magjury-search__input">
+				<button type="submit" class="magjury-search__submit">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+					<circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+					<path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+				</svg>
+				</button>
+			</form>
+			</div>
+		</div>
+
+		<div class="magjury-account">
+			<a href="<%=login_path%>" class="magjury-account__btn" aria-label="Mon compte">
+			<svg class="magjury-account__icon" viewBox="0 0 24 24" fill="none">
+				<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+				<circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+			</svg>
+			<span class="magjury-account__txt">Mon compte</span>
+			<span class="magjury-account__dot"></span>
+			</a>
+		</div>
+		</div>
+
+		<!-- Burger -->
+		<button class="magjury-burger" aria-label="Menu" aria-expanded="false">
+		<span class="magjury-burger__line"></span>
+		<span class="magjury-burger__line"></span>
+		<span class="magjury-burger__line"></span>
+		</button>
+	</div>
+
+	<!-- Off-canvas amélioré -->
+	<aside class="magjury-canvas">
+		<div class="magjury-canvas__head">
+		<div class="magjury-canvas__logo">
+            <%= image_tag 'logo.jpg' %>
+			<span>MAGJURY</span>
+		</div>
+		<button class="magjury-canvas__close" aria-label="Fermer">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+			<path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+			<path d="M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+			</svg>
+		</button>
+		</div>
+
+		<div class="magjury-canvas__search">
+		<form class="magjury-canvas__search-form">
+			<input type="text" placeholder="Rechercher..." class="magjury-canvas__search-input">
+			<button type="submit" class="magjury-canvas__search-btn">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+				<circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+				<path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+			</svg>
+			</button>
+		</form>
+		</div>
+
+		<nav class="magjury-canvas__nav">
+		<ul id="magjury-canvas-list">
+			<li><a href="/" class="magjury-canvas__link">Accueil</a></li>
+
+			<!-- Dropdown 1 -->
+			<li class="magjury-canvas-dropdown">
+				<a href="<%=magazine_path%>" class="magjury-canvas-dropdown__toggle" aria-expanded="false">
+					<span>Actualités</span>
+					<!-- <svg class="magjury-canvas-arrow" width="12" height="12" viewBox="0 0 12 12">
+					<path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+					</svg> -->
+				</a>
+			</li>
+
+			<!-- Dropdown 2 -->
+			<li class="magjury-canvas-dropdown">
+			<button class="magjury-canvas-dropdown__toggle" aria-expanded="false">
+				<span>Offres</span>
+				<svg class="magjury-canvas-arrow" width="12" height="12" viewBox="0 0 12 12">
+				<path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+				</svg>
+			</button>
+			<ul class="magjury-canvas-dropdown__menu">
+				<li><a href="">Ventes aux enchères</a></li>
+				<li><a href="">Offres de services</a></li>
+				<li><a href="">Offres d'emploi</a></li>
+			</ul>
+			</li>
+
+			<li><a href="" class="magjury-canvas__link">Boutique</a></li>
+			<li><a href="" class="magjury-canvas__link">Forum</a></li>
+			<li><a href="" class="magjury-canvas__link">Contact</a></li>
+		</ul>
+		</nav>
+
+		<div class="magjury-canvas__actions">
+		<a href="<%=login_path%>" class="magjury-canvas__account-btn">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+			<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+			<circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+			</svg>
+			<span>Mon compte</span>
+		</a>
+		</div>
+
+		<!-- Pied de page amélioré -->
+		<div class="magjury-canvas__foot">
+		<div class="magjury-canvas__contact">
+			<h5>Contactez-nous</h5>
+			<p>contact@magjury.com</p>
+			<p>+33 1 23 45 67 89</p>
+		</div>
+		<div class="magjury-canvas__social">
+			<a href="" aria-label="Twitter">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+				<path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+			</a>
+			<a href="" aria-label="LinkedIn">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+				<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/>
+				<rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/>
+				<circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+			</svg>
+			</a>
+			<a href="" aria-label="Instagram">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+				<rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+				<circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+				<circle cx="18" cy="6" r="1" stroke="currentColor" stroke-width="2"/>
+			</svg>
+			</a>
+		</div>
+		<p class="magjury-canvas__copyright">© 2025 MAGJURY - Tous droits réservés</p>
+		</div>
+	</aside>
+	<div class="magjury-canvas__overlay"></div>
+	</header>
+	
+	

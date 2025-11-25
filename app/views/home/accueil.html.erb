@@ -1,0 +1,1001 @@
+
+<div class="page-wrapper">
+ <!-- Header amélioré pour MAGJURY -->
+	<%= render 'layouts/home_header' %>
+	<!-- Services Section -->
+	
+    <section class="banner-section">
+        <!-- Vidéo de fond -->
+        <video class="banner-video" autoplay muted loop playsinline>
+             <source src="<%= asset_path('hero_video.mp4') %>" type="video/mp4">
+            <!-- Fallback image si la vidéo ne charge pas -->
+            <%= image_tag 'bg-loi.jpg' %>
+        </video>
+        
+        <!-- Overlay sombre -->
+        <div class="banner-overlay"></div>
+        
+        <!-- Contenu -->
+        <div class="banner-content">
+            <span class="banner-subtitle">Démarrez avec MAGJURY</span>
+            <h1 class="banner-title">
+                Nous sommes ici pour protéger de toute<br>
+                forme de <span>violences</span>
+            </h1>
+            <p class="banner-description">
+                Votre partenaire de confiance pour la défense de vos droits et 
+                la protection juridique dont vous avez besoin.
+            </p>
+            <div class="banner-buttons">
+                <a href="#" class="btn btn-primary">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Nos services
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Nous contacter
+                </a>
+            </div>
+        </div>
+        
+        <!-- Indicateur de défilement -->
+        <a href="#next-section" class="banner-scroll">
+            <span>Découvrir</span>
+            <div class="scroll-arrow"></div>
+        </a>
+    </section>
+
+  
+
+  
+
+	<!-- Services Section -->
+		<section class="services-section" id="next-section">
+			<div class="icon-one wow zoomIn" data-wow-delay="250ms" data-wow-duration="1500ms" style="background-image:url(images/icons/icon-1.png)"></div>
+			<div class="icon-two wow fadeInRight" data-wow-delay="500ms" data-wow-duration="1500ms" style="background-image:url(images/icons/icon-2.png)"></div>
+			<div class="container">
+				<div class="row clearfix">
+							
+					<!-- Services Block -->
+					<div class="services-block col-lg-4 col-md-6 col-sm-12">
+						<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<div class="border-one"></div>
+							<div class="border-two"></div>
+							<div class="content">
+								<div class="icon-box">
+									<span class="icon flaticon-family"></span>
+								</div>
+								<h6><a href="">Conseils</a></h6>
+								<div class="text">Permettre aux citoyens de connaitre leur droit, savoir le réclamer et saisir les
+									juridictions en cas de problème.</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Services Block -->
+					<div class="services-block col-lg-4 col-md-6 col-sm-12">
+						<div class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+							<div class="border-one"></div>
+							<div class="border-two"></div>
+							<div class="content">
+								<div class="icon-box">
+									<span class="icon flaticon-fingerprint-1"></span>
+								</div>
+								<h6><a href="">Orientation</a></h6>
+								<div class="text">Donnez accès au droit à l’information et à la communication des citoyens selon la constitution Guinéenne</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Services Block -->
+					<div class="services-block col-lg-4 col-md-6 col-sm-12">
+						<div class="inner-box wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+							<div class="border-one"></div>
+							<div class="border-two"></div>
+							<div class="content">
+								<div class="icon-box">
+									<span class="icon flaticon-non-stop-call"></span>
+								</div>
+								<h6><a href="">Assistance/Orientation</a></h6>
+								<div class="text">Promouvoir et  vulgariser les informations judiciaires en ligne (décisions de
+									justice, mandats, ordonnances, convocations).</div>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</section>
+	<!-- End Services Section -->
+	<!-- End Services Section -->
+		<!-- News Section -->
+		<section class="news-section">
+			<div class="container">
+			
+				<!-- Sec Title -->
+				<div class="section-title">
+					<div class="clearfix">
+						<div class="pull-left">
+							<div class="title">actualités</div>
+							<h3>Jetez un coupe d'oeil sur nos 
+								<br> dernières <span>actualités</span></h3>
+						</div>
+						<div class="pull-right">
+							<div class="text">MAGJURY rend la vie facile, de par la mise à disposition de son contenu riche et diversifié et son ergonomie accessible à tous</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row clearfix">
+					
+					<!-- News Block -->
+					<div class="news-block col-lg-4 col-md-6 col-sm-12">
+						<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<div class="image">
+                                <%= image_tag 'news-4.jpg' %>
+								<div class="overlay-box">
+									<a href="images/news-4.jpg" data-fancybox="news" data-caption="" class="plus flaticon-plus"></a>
+								</div>
+							</div>
+							<div class="lower-content">
+								<ul class="post-meta">
+									<li><span class="fa fa-calendar"></span>September 12, 2019</li>
+									<li><span class="fa fa-user"></span>Admin</li>
+								</ul>
+								<h5><a href="">Réforme des Retraites : La Loi qui Divise</a></h5>
+								<a href="" class="theme-btn bg-primary btn-style-two">Lire la suite</a>
+							</div>
+						</div>
+					</div>
+					
+					<!-- News Block -->
+					<div class="news-block col-lg-4 col-md-6 col-sm-12">
+						<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+							<div class="image">
+								 <%= image_tag 'news-4.jpg' %>
+								<div class="overlay-box">
+									<a href="images/news-4.jpg" data-fancybox="news" data-caption="" class="plus flaticon-plus"></a>
+								</div>
+							</div>
+							<div class="lower-content">
+								<ul class="post-meta">
+									<li><span class="fa fa-calendar"></span>September 12, 2019</li>
+									<li><span class="fa fa-user"></span>Admin</li>
+								</ul>
+								<h5><a href="">Loi Climat : Quels Impacts sur l'Économie ?</a></h5>
+								<a href="" class="theme-btn bg-primary btn-style-two">Lire la suite</a>
+							</div>
+						</div>
+					</div>
+					
+					<!-- News Block -->
+					<div class="news-block col-lg-4 col-md-6 col-sm-12">
+						<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+							<div class="image">
+								 <%= image_tag 'news-4.jpg' %>
+								<div class="overlay-box">
+									<a href="images/news-4.jpg" data-fancybox="news" data-caption="" class="plus flaticon-plus"></a>
+								</div>
+							</div>
+							<div class="lower-content">
+								<ul class="post-meta">
+									<li><span class="fa fa-calendar"></span>September 12, 2019</li>
+									<li><span class="fa fa-user"></span>Admin</li>
+								</ul>
+								<h5><a href="">Nouvelle Loi Sécurité : Vers un État plus Strict ?</a></h5>
+								<a href="" class="theme-btn bg-primary btn-style-two">Lire la suite</a>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<div>
+					<a href="" class="theme-btn bg-primary btn-style-two">Allez à la page des actualités</a>
+				</div>
+			</div>
+		</section>
+		<!-- End News Section -->
+	<!-- About Section -->
+	<section class="about-section">
+		<!-- Image Layer -->
+		<div class="image-layer"></div>
+		<div class="container">
+			<div class="row clearfix">
+				
+				<!-- Content Column -->
+				<div class="content-column col-lg-7 col-md-12 col-sm-12">
+					<div class="inner-column">
+						
+						<!-- Sec Title -->
+						<div class="section-title">
+							<div class="title">A propos de nous</div>
+							<h3>MAGJURY est un magazine juridique qui œuvre pour <span>la promotion</span> et la <span>vulgarisation</span> des actualités Juridiques et pour l’épanouissement de la
+								culture du droit en Guinée et en Afrique.</h3>
+						</div>
+						
+						<div class="text">
+							<p>Dans un monde ouvert à la démocratie, l’information et la communication sont des repères
+								pour les citoyens afin de leur permettre de participer activement au développement sociopolitique, économique et juridique de leur communauté.</p>
+							<p>Le droit à l’information et à la communication sont garanties par la constitution Guinéenne du
+								14 mars 2020, et les conventions internationales, privilégiant les citoyens de trouver la
+								solution à leur situation juridique. C’est pourquoi, www.magjury.org, un magazine juridique
+								qui œuvrera pour la vulgarisation des actualités Juridiques et pour l’épanouissement de la
+								culture du droit en Guinée et en Afrique.</p>
+						</div>
+						<div class="question">Avez-vous une <a href="#">demande</a> <strong>01XXXXXXXXX</strong> <span class="or">or</span> <strong>01XXXXXXXXX</strong></div>
+						
+					</div>
+				</div>
+				
+				<!-- Image Column -->
+				<div class="image-column col-lg-5 col-md-12 col-sm-12">
+					<div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+                             <%= image_tag 'about-2.jpg' %>
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<h2>35 <span>ans d'expériences</span></h2>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+	</section>
+	<!-- End About Section -->
+	
+	<!-- Services Section Two -->
+	<section class="services-section-two" style="background-image: url(images/1.jpg);">
+		<div class="container">
+			<!-- Sec Title -->
+			<div class="section-title light centered">
+				<div class="title">Services</div>
+				<h3>Prenez connaissances des services que nous <span>offront</span></h3>
+			</div>
+			<div class="row clearfix">
+				
+				<!-- Services Block Two -->
+				<div class="services-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="icon-box">
+							<span class="icon flaticon-internet"></span>
+						</div>
+						<h3>Droit des Affaires</h3>
+						<div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</div>
+						<div class="overlay-box" style="background-image: url(images/resource/service-1.jpg);">
+							<div class="overlay-inner">
+								<div class="content">
+									<span class="icon flaticon-internet"></span>
+									<h4><a href="">Droit des Affaires</a></h4>
+									<a href="" class="theme-btn bg-primary btn-style-one">En savoir plus</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Services Block Two -->
+				<div class="services-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="icon-box">
+							<span class="icon flaticon-museum"></span>
+						</div>
+						<h3>Droit civil</h3>
+						<div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</div>
+						<div class="overlay-box" style="background-image: url(images/resource/service-1.jpg);">
+							<div class="overlay-inner">
+								<div class="content">
+									<span class="icon flaticon-museum"></span>
+									<h4><a href="">Droit civil</a></h4>
+									<a href="" class="theme-btn bg-primary btn-style-one">En savoir plus</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Services Block Two -->
+				<div class="services-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="icon-box">
+							<span class="icon flaticon-gun"></span>
+						</div>
+						<h3>Droit pénal</h3>
+						<div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</div>
+						<div class="overlay-box" style="background-image: url(images/resource/service-1.jpg);">
+							<div class="overlay-inner">
+								<div class="content">
+									<span class="icon flaticon-gun"></span>
+									<h4><a href="">Droit pénal</a></h4>
+									<a href="" class="theme-btn bg-primary btn-style-one">En savoir plus</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Services Block Two -->
+				<div class="services-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="icon-box">
+							<span class="icon flaticon-plan"></span>
+						</div>
+						<h3>Conflit judiciaire</h3>
+						<div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</div>
+						<div class="overlay-box" style="background-image: url(images/resource/service-1.jpg);">
+							<div class="overlay-inner">
+								<div class="content">
+									<span class="icon flaticon-plan"></span>
+									<h4><a href="">Conflit judiciaire</a></h4>
+									<a href="" class="theme-btn bg-primary btn-style-one">En savoir plus</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Services Block Two -->
+				<div class="services-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="icon-box">
+							<span class="icon flaticon-book"></span>
+						</div>
+						<h3>Loi sur l'éducation</h3>
+						<div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</div>
+						<div class="overlay-box" style="background-image: url(images/resource/service-1.jpg);">
+							<div class="overlay-inner">
+								<div class="content">
+									<span class="icon flaticon-book"></span>
+									<h4><a href="">Loi sur l'éducation</a></h4>
+									<a href="" class="theme-btn bg-primary btn-style-one">En savoir plus</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Services Block Two -->
+				<div class="services-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="icon-box">
+							<span class="icon flaticon-house-outline"></span>
+						</div>
+						<h3>Droit immobilier</h3>
+						<div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</div>
+						<div class="overlay-box" style="background-image: url(images/resource/service-1.jpg);">
+							<div class="overlay-inner">
+								<div class="content">
+									<span class="icon flaticon-house-outline"></span>
+									<h4><a href="">Droit immobilier</a></h4>
+									<a href="" class="theme-btn bg-primary btn-style-one">En savoir plus</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		
+		</div>
+	</section>
+	<!-- End Services Section Two -->
+	
+	<!-- Counter Section -->
+	<section class="counter-section">
+		<div class="icon-one wow zoomIn" data-wow-delay="250ms" data-wow-duration="1500ms" style="background-image:url(images/icons/icon-3.png)"></div>
+		<div class="icon-two wow fadeInRight" data-wow-delay="500ms" data-wow-duration="1500ms" style="background-image:url(images/icons/icon-4.png)"></div>
+		<div class="container">
+			<!-- Title Box -->
+			<div class="title-box">
+				<div class="section-title">
+					<div class="row clearfix">
+						<div class="column col-lg-6 col-md-12 col-sm-12">
+							<div class="title">A savoir</div>
+							<h3>Nous sommes très fiers de notre<br> grande <span>réussite.</span></h3>
+						</div>
+						<div class="column col-lg-6 col-md-12 col-sm-12">
+							<div class="row clearfix">
+								
+								<div class="col-lg-6 col-md-6 col-sm-12">
+									<p>Aenean tincidunt id mauris idology auctor. Donec at ligula lacus. Nulla dignissimmi quis neque interdum.</p>
+								</div>
+								
+								<div class="col-lg-6 col-md-6 col-sm-12">
+									<p>Aenean tincidunt id mauris idology auctor. Donec at ligula lacus. Nulla dignissimmi quis neque interdum.</p>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Fact Counter -->
+			<div class="fact-counter">
+				<div class="row clearfix">
+				
+					<!--Column-->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<div class="count-outer count-box">
+								<span class="count-text" data-speed="3000ms" data-stop="1825">0</span>+
+								<div class="counter-title">Articles publiés</div>
+							</div>
+						</div>
+					</div>
+			
+					<!--Column-->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<div class="count-outer count-box">
+								<span class="count-text" data-speed="2000" data-stop="532">0</span>+
+								<div class="counter-title">clients satisfaits</div>
+							</div>
+						</div>
+					</div>
+			
+					<!--Column-->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+							<div class="count-outer count-box">
+								<span class="count-text" data-speed="2000" data-stop="69">0</span>+
+								<div class="counter-title">Livre disponibles</div>
+							</div>
+						</div>
+					</div>
+			
+					<!--Column-->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+							<div class="count-outer count-box">
+								<span class="count-text" data-speed="1500" data-stop="32">0</span>+
+								<div class="counter-title">Produits disponibles</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+	</section>
+	
+	<!-- Team Section -->
+
+    <section class="team-section">
+        <div class="container">
+            <!-- Titre de Section -->
+            <div class="section-title">
+                <span class="title">Contributions</span>
+                <h3>Nos experts <span>contributeurs</span> sur MAGJURY</h3>
+            </div>
+            
+            <!-- Indicateur de scroll pour mobile -->
+            <div class="scroll-indicator">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Glissez pour naviguer
+            </div>
+
+            <!-- Slider des Experts -->
+            <div class="team-slider">
+                <div class="team-slider-container" id="sliderContainer">
+                    <div class="team-slider-track" id="sliderTrack">
+                        <!-- Expert 1 -->
+                        <div class="team-card">
+                            <div class="team-specialty">Droit Civil</div>
+                            <div class="team-image">
+                                <%= image_tag 'team-1.jpg' %>
+                                <div class="team-overlay">
+                                    <div class="team-social">
+                                        <a href="#" class="social-link" aria-label="LinkedIn">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/>
+                                                <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="social-link" aria-label="Twitter">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="social-link" aria-label="Email">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3 class="team-name"><a href="#">Jonson Leo</a></h3>
+                                <span class="team-role">Avocat Civil</span>
+                                <p class="team-bio">Spécialiste en droit des contrats et responsabilité civile avec 15 ans d'expérience.</p>
+                            </div>
+                        </div>
+
+                        <!-- Expert 2 -->
+                        <div class="team-card">
+                            <div class="team-specialty">Droit Notarial</div>
+                            <div class="team-image">
+                                <%= image_tag 'team-2.jpg' %>
+                                <div class="team-overlay">
+                                    <div class="team-social">
+                                        <a href="#" class="social-link" aria-label="LinkedIn">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/>
+                                                <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="social-link" aria-label="Twitter">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="social-link" aria-label="Email">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3 class="team-name"><a href="#">Malina Leo</a></h3>
+                                <span class="team-role">Notaire</span>
+                                <p class="team-bio">Expert en droit immobilier et successoral, rédaction d'actes authentiques.</p>
+                            </div>
+                        </div>
+
+                        <!-- Expert 3 -->
+                        <div class="team-card">
+                            <div class="team-specialty">Justice</div>
+                            <div class="team-image">
+                               <%= image_tag 'team-2.jpg' %>
+                                <div class="team-overlay">
+                                    <div class="team-social">
+                                        <a href="#" class="social-link" aria-label="LinkedIn">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/>
+                                                <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="social-link" aria-label="Twitter">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="social-link" aria-label="Email">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3 class="team-name"><a href="#">Neobir Fro</a></h3>
+                                <span class="team-role">Juge</span>
+                                <p class="team-bio">Magistrat expérimenté, spécialiste en droit pénal et procédures judiciaires.</p>
+                            </div>
+                        </div>
+
+                        <!-- Expert 4 -->
+                        <div class="team-card">
+                            <div class="team-specialty">Droit des Affaires</div>
+                            <div class="team-image">
+                                <%= image_tag 'team-2.jpg' %>
+                                <div class="team-overlay">
+                                    <div class="team-social">
+                                        <a href="#" class="social-link" aria-label="LinkedIn">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/>
+                                                <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="social-link" aria-label="Twitter">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="social-link" aria-label="Email">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3 class="team-name"><a href="#">Sophie Martin</a></h3>
+                                <span class="team-role">Avocate en Droit des Affaires</span>
+                                <p class="team-bio">Conseil en fusions-acquisitions et droit commercial international.</p>
+                            </div>
+                        </div>
+
+                        <!-- Vous pouvez ajouter autant d'experts que vous voulez -->
+                        <!-- Le slider s'adaptera automatiquement -->
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contrôles du Slider -->
+            <div class="slider-controls">
+                <button class="slider-arrow prev" aria-label="Précédent">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+
+                <div class="slider-dots" id="sliderDots">
+                    <!-- Les points seront générés par JavaScript -->
+                </div>
+
+                <div class="slider-progress">
+                    <div class="slider-progress-bar" id="progressBar"></div>
+                </div>
+
+                <button class="slider-arrow next" aria-label="Suivant">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+   
+
+	<!-- End Team Section -->
+	
+	
+	<section class="boutique-section">
+    <div class="boutique-overlay"></div>
+    <div class="container">
+        <div class="boutique-header">
+            <!-- Titre de Section -->
+            <div class="section-title">
+                <span class="title">NOTRE BOUTIQUE</span>
+                <h2>MAGJURY met à votre disposition une gamme variée <span>d'œuvres</span> Juridiques et Judiciaires</h2>
+            </div>
+        </div>
+
+        <!-- Produits -->
+        <div class="produits-grid">
+            <!-- Produit 1 -->
+            <div class="produit-card">
+                <div class="produit-badge">Encyclopédie</div>
+                <div class="produit-image">
+                    <%= image_tag 'livre1.jpg', class: "produit-img" %>
+                    <div class="produit-overlay">
+                        <button class="btn-ajouter-panier">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <circle cx="8" cy="21" r="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="20" cy="21" r="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M5.67 6H23l-1.68 8.39a2 2 0 0 1-2 1.61H8.75a2 2 0 0 1-2-1.74L5.23 2.74A2 2 0 0 0 3.25 1H1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Ajouter au panier
+                        </button>
+                        <a href="#" class="btn-details">Voir détails</a>
+                    </div>
+                </div>
+                <div class="produit-content">
+                    <h3 class="produit-titre">
+                        <a href="#">Le grand livre de la justice</a>
+                    </h3>
+                    <span class="produit-categorie">Encyclopédie juridique</span>
+                    
+                    <div class="produit-prix">
+                        <span class="prix-actuel">$250.99</span>
+                        <span class="prix-original">$299.99</span>
+                    </div>
+                    
+                    <div class="produit-rating">
+                        <div class="stars">
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <span class="rating-count">(34 avis)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="produit-card">
+                <div class="produit-badge">Droit Civil</div>
+                <div class="produit-image">
+                    <%= image_tag 'livre2.jpg', class: "produit-img" %>
+                    <div class="produit-overlay">
+                        <button class="btn-ajouter-panier">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <circle cx="8" cy="21" r="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="20" cy="21" r="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M5.67 6H23l-1.68 8.39a2 2 0 0 1-2 1.61H8.75a2 2 0 0 1-2-1.74L5.23 2.74A2 2 0 0 0 3.25 1H1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Ajouter au panier
+                        </button>
+                        <a href="#" class="btn-details">Voir détails</a>
+                    </div>
+                </div>
+                <div class="produit-content">
+                    <h3 class="produit-titre">
+                        <a href="#">La société, la justice et nous</a>
+                    </h3>
+                    <span class="produit-categorie">Droit Civil approfondi</span>
+                    
+                    <div class="produit-prix">
+                        <span class="prix-actuel">$250.99</span>
+                    </div>
+                    
+                    <div class="produit-rating">
+                        <div class="stars">
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <span class="rating-count">(34 avis)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="produit-card">
+                <div class="produit-badge promo">-15%</div>
+                <div class="produit-badge">Droit Infantile</div>
+                <div class="produit-image">
+                    <%= image_tag 'livre3.jpg', class: "produit-img" %>
+                    <div class="produit-overlay">
+                        <button class="btn-ajouter-panier">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <circle cx="8" cy="21" r="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="20" cy="21" r="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M5.67 6H23l-1.68 8.39a2 2 0 0 1-2 1.61H8.75a2 2 0 0 1-2-1.74L5.23 2.74A2 2 0 0 0 3.25 1H1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Ajouter au panier
+                        </button>
+                        <a href="#" class="btn-details">Voir détails</a>
+                    </div>
+                </div>
+                <div class="produit-content">
+                    <h3 class="produit-titre">
+                        <a href="#">Rendre justice aux enfants</a>
+                    </h3>
+                    <span class="produit-categorie">Droit de l'enfant</span>
+                    
+                    <div class="produit-prix">
+                        <span class="prix-actuel">$212.34</span>
+                        <span class="prix-original">$249.99</span>
+                    </div>
+                    
+                    <div class="produit-rating">
+                        <div class="stars">
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star filled" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <span class="rating-count">(34 avis)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bouton Voir Plus -->
+        <div class="boutique-footer">
+            <a href="#" class="btn-boutique">
+                <span>Découvrir tous nos produits</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+// Animation au scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const produitCards = document.querySelectorAll('.produit-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    produitCards.forEach(card => {
+        observer.observe(card);
+    });
+});
+</script>
+	
+
+	
+
+	
+	<!--Main Footer-->
+    <footer class="main-footer">
+    	<div class="container">
+        	<!--Widgets Section-->
+            <div class="widgets-section">
+            	<div class="row clearfix">
+                	
+                    <!--Column-->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+						<div class="row clearfix">
+						
+                        	<!--Footer Column-->
+                            <div class="footer-column col-lg-7 col-md-6 col-sm-12">
+                                <div class="footer-widget logo-widget">
+									<div class="logo">
+                                        <%= image_tag 'logo.jpg',  style: "width:90px;" %>
+									</div>
+									<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
+									<ul class="list-style-three">
+										<li><span class="icon fa fa-phone"></span> +123 (4567) 890</li>
+										<li><span class="icon fa fa-envelope"></span> info@lawsight.com</li>
+										<li><span class="icon fa fa-home"></span>380 St Kilda Road, Melbourne <br> VIC 3004, Australia</li>
+									</ul>
+								</div>
+							</div>
+							
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                                <div class="footer-widget links-widget">
+									<h4>Liens rapide</h4>
+									<ul class="list-link">
+										<li><a href="">Acceuil</a></li>
+										<li><a href="">Services</a></li>
+										<li><a href="">A Propos</a></li>
+										<li><a href="">Temoignage</a></li>
+										<li><a href="">Actualités</a></li>
+										<li><a href="">Contact</a></li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					
+					<!--Column-->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+						<div class="row clearfix">
+						
+                        	<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget links-widget">
+									<h4>Support</h4>
+									<ul class="list-link">
+										<li><a href="">Contact</a></li>
+										<li><a href="">Soumettre un ticket</a></li>
+										<li><a href="">Service</a></li>
+										<li><a href="">Support Technique</a></li>
+										<li><a href="">COnditions d'utilisation</a></li>
+										<li><a href="">Professional Services</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget gallery-widget">
+									<h4>Gallerie</h4>
+									<div class="widget-content">
+										<div class="images-outer clearfix">
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/1.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %> </a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/2.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/3.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/4.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/5.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/6.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %></a></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- Footer Bottom -->
+		<div class="footer-bottom bg-primary text-light">
+			<div class="container">
+				<div class="row clearfix">
+					
+					<!-- Copyright Column -->
+					<div class="copyright-column col-lg-6 col-md-6 col-sm-12">
+						<div class="copyright">2025 &copy; Tous droit réservé KDA <a href="#">KDA</a></div>
+					</div>
+					
+					<!-- Social Column -->
+					<div class="social-column col-lg-6 col-md-6 col-sm-12">
+						<ul>
+							<li class="follow">Suivez-nous: </li>
+							<li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
+							<li><a href="#"><span class="fa fa-twitter-square"></span></a></li>
+							<li><a href="#"><span class="fa fa-linkedin-square"></span></a></li>
+							<li><a href="#"><span class="fa fa-google-plus-square"></span></a></li>
+							<li><a href="#"><span class="fa fa-rss-square"></span></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+</div>
+<!--End pagewrapper-->
+

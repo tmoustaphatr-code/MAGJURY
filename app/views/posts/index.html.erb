@@ -1,0 +1,87 @@
+<%# app/views/posts/index.html.erb – gestion articles %>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+:root{
+  --joy:#ff6f61;
+  --joy-dark:#e55a4f;
+  --bg:#fffaf5;
+  --radius:8px;
+  --shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
+.post-mgmt{width:90%;max-width:1200px;margin:2rem auto;font-family:'Quicksand',sans-serif;}
+.post-mgmt h1{margin-bottom:1.5rem;color:var(--joy-dark);}
+
+/* ===== TABLEAU DESKTOP ===== */
+.table-wrap{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
+table{width:100%;border-collapse:collapse;}
+thead{background:var(--joy);color:#fff;}
+th,td{padding:.75rem 1rem;text-align:left;font-size:.9rem;}
+tbody tr:nth-child(even){background:#fdf7f7;}
+tbody tr:hover{background:#ffecea;}
+
+/* image cercle */
+.img-circle{width:40px;height:40px;border-radius:50%;object-fit:cover;}
+
+/* badges statut */
+.badge{display:inline-block;padding:.25rem .5rem;font-size:.7rem;border-radius:12px;color:#fff;}
+.badge.published{background:#27ae60;}
+.badge.draft{background:#95a5a6;}
+
+/* actions icônes */
+.actions a{margin-right:.5rem;color:#555;font-size:1.2rem;transition:color .2s;}
+.actions a:hover{color:var(--joy);}
+.actions .delete:hover{color:#e74c3c;}
+
+
+</style>
+
+<div class="post-mgmt">
+  <h1>Gestion des articles</h1>
+
+  <div class="table-wrap">
+    <!-- Desktop : vrai tableau -->
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Image</th>
+          <th>Titre</th>
+          <th>Catégorie</th>
+          <th>Tags</th>
+          <th>Vues</th>
+          <th>Auteur</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.id %></td>
+            <td>
+              <% if post.cover_image.attached? %>
+                <%= cl_image_tag post.cover_image.key, width: 40, height: 40, crop: :thumb, class: "img-circle" %>
+              <% else %>
+                <div class="img-circle" style="background:#ddd;"></div>
+              <% end %>
+            </td>
+            <td><%= post.title %></td>
+            <td><%= post.category&.name %></td>
+            <td><%= post.tags.map(&:name).join(', ') %></td>
+            <td><%= post.views %></td>
+            <td><%= post.user&.email || '—' %></td>
+            <td>
+              <span class="badge <%= post.status %>"><%= post.status.humanize %></span>
+            </td>
+            <td class="actions">
+              <%= link_to "👁", post_path(post), title: "Voir" %>
+              <%= link_to "✏", edit_post_path(post), title: "Éditer" %>
+              <%= link_to "🗑", post_path(post), method: :delete,
+                          data: { confirm: "Supprimer ?" }, class: "delete", title: "Supprimer" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+

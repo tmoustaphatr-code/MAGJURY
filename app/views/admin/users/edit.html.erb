@@ -1,0 +1,109 @@
+<style>
+  .table {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.02);
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05) !important;
+  }
+  
+  .card {
+    border-radius: 12px;
+  }
+  
+  .card-header hr {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  .badge.bg-success {
+    background-color: #28a745 !important;
+  }
+  
+  .badge.bg-danger {
+    background-color: #dc3545 !important;
+  }
+  
+  .btn-group-sm .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.765rem;
+  }
+</style>
+
+
+  <div class="card shadow-lg border-0 rounded-4">
+    
+    <!-- Header -->
+    <div class="card-header bg-warning text-dark rounded-top-4">
+      <h3 class="mb-0">
+        <i class="bi bi-pencil-square me-2"></i> Modifier le profil de <%= @user.nom %> <%= @user.prenom %>
+      </h3>
+    </div>
+
+    <!-- User info -->
+    <div class="card-body border-bottom pb-3">
+      <dl class="row mb-0">
+        <dt class="col-sm-3 fw-bold">Email :</dt>
+        <dd class="col-sm-9"><%= @user.email %></dd>
+
+    
+
+        <dt class="col-sm-3 fw-bold">Rôle :</dt>
+        <dd class="col-sm-9">
+          <span class="badge <%= @user.role == 'admin' ? 'bg-danger' : 'bg-info' %>">
+            <%= @user.role.capitalize %>
+          </span>
+        </dd>
+
+        <dt class="col-sm-3 fw-bold">Compte bloqué :</dt>
+        <dd class="col-sm-9">
+          <% if @user.blocked? %>
+            <span class="badge bg-danger">Oui</span>
+          <% else %>
+            <span class="badge bg-success">Non</span>
+          <% end %>
+        </dd>
+
+      </dl>
+    </div>
+
+    <!-- Form -->
+    <div class="card-body">
+      <%= form_with(model: [:admin, @user], local: true, class: "needs-validation") do |f| %>
+
+        <div class="mb-3">
+          <%= f.label :nom, class: "form-label fw-bold" %>
+          <%= f.text_field :nom, class: "form-control", placeholder: "Nom de l'utilisateur" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :prenom, class: "form-label fw-bold" %>
+          <%= f.text_field :prenom, class: "form-control", placeholder: "Prénom de l'utilisateur" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :email, class: "form-label fw-bold" %>
+          <%= f.email_field :email, class: "form-control", placeholder: "exemple@email.com" %>
+        </div>
+
+
+        <div class="mb-3">
+          <%= f.label :role, class: "form-label fw-bold" %>
+          <%= f.select :role, User::ROLES, {}, class: "form-select" %>
+        </div>
+
+        <div class="form-check mb-2">
+          <%= f.check_box :blocked, class: "form-check-input", id: "blocked" %>
+          <%= f.label :blocked, "Bloquer le compte ?", class: "form-check-label" %>
+        </div>
+
+
+        <div class="d-flex justify-content-between">
+          <%= f.submit "Mettre à jour", class: "btn btn-success" %>
+          <%= link_to "Annuler", admin_user_path(@user), class: "btn btn-secondary" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+ 

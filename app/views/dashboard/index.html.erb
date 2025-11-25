@@ -1,0 +1,113 @@
+
+
+              <!-- Cartes résumé : DESIGN CAPTIVANT -->
+                <div class="bg-white rounded-3 card-margin">
+                    <div class="row gy-4" style="align-items: center;">
+                        
+                    </div>
+                </div>
+
+               
+                
+                <div class="row g-4 mb-4">
+                  <div class="col-12 col-md-6">
+                      <div class="ux-card-new ux-card-glow-green">
+                      <div class="ux-card-icon-float"><i class="fas fa-users text-primary"></i></div>
+                      <div class="ux-card-data">
+                          <div class="ux-card-val" data-target="00">00</div>
+                          <div class="ux-card-label">Utilisateurs inscrits</div>
+                      </div>
+                      </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                      <div class="ux-card-new ux-card-glow-blue">
+                      <div class="ux-card-icon-float"><i class="fas fa-users text-success"></i></div>
+                      <div class="ux-card-data">
+                       
+                          <div class="ux-card-val" data-target="00">00</div>
+                          <div class="ux-card-label">Utilisateurs Actif</div>
+                      </div>
+                      </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                      <div class="ux-card-new ux-card-glow-orange">
+                      <div class="ux-card-icon-float"><i class="fa fa-bag-shopping"></i></div>
+                      <div class="ux-card-data">
+                          <div class="ux-card-val" data-target="0">0</div>
+                          <div class="ux-card-label">Produits</div>
+                      </div>
+                      </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                      <div class="ux-card-new ux-card-glow-purple">
+                      <div class="ux-card-icon-float"><i class="fa fa-list-check"></i></div>
+                      <div class="ux-card-data">
+                          <div class="ux-card-val" data-target="0">0</div>
+                          <div class="ux-card-label">Tâches</div>
+                      </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="bg-white tw-px-8 tw-py-8 rounded-3 mb-5">
+                <h4 class="fw-normal text-dark-600">Inscriptions récentes</h4>
+                <span class="border-neutral-200 border-bottom tw-border-dashed w-100 tw-mt-6 tw-mb-6"></span>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead >
+                            <tr class="tw-mb-3">
+                            <th scope="col" class="bg-base-two-10 fw-semibold tw-text-xl">
+                                <span class="tw-px-6 tw-py-4">
+                                    nom
+                                </span>
+                            </th>
+                            <th scope="col" class="bg-base-two-10 fw-semibold tw-text-xl">
+                                <span class="tw-px-6 tw-py-4">
+                                    prenom
+                                </span>
+                            </th>
+                            <th scope="col" class="bg-base-two-10 fw-semibold tw-text-xl">
+                                <span class="tw-px-6 tw-py-4 text-center justify-content-center d-flex">
+                                    email
+                                </span>
+                            </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>  
+                            <% @total_user.each_with_index do |user| %> 
+                                <tr>
+                                    <th scope="row">
+                                        <div class="tw-px-6 tw-py-2">
+                                            <span class="fw-semibold tw-text-4 text-dark-600 tw-mb-1 d-block"><%=user.nom%></span>  
+                                        </div>
+                                    </th>
+                    
+                                    <td>
+                                        <div class="tw-px-6 tw-py-2">
+                                            <span class="fw-semibold tw-text-4 text-dark-600 tw-mb-1 d-block"><%=user.prenom%></span>  
+                                        </div>
+
+                                    </td>
+                    
+                                    <td>
+                                        <div class="tw-px-6 tw-py-2">
+                                            <span class="fw-semibold tw-text-4 text-dark-600 tw-mb-1 d-block"><%=user.email%></span>  
+                                        </div>
+                                    </td>
+                                </tr> 
+                            <%end%> 
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="d-flex align-items-center tw-gap-1 justify-content-center flex-wrap pt-5">
+                    <li>
+                        <a href="#" class="btn btn-primary">
+                            Voir la liste complet
+                        </a>
+                    </li>
+                </ul>
+                </div>
+
+            
+
