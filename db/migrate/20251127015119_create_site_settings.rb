@@ -7,7 +7,6 @@ class CreateSiteSettings < ActiveRecord::Migration[7.0]
       t.string :time_zone
       t.string :tel1
       t.string :tel2
-      t.string :email
       t.string :whatsapp
       t.string :facebook
       t.string :linkedin
@@ -18,6 +17,7 @@ class CreateSiteSettings < ActiveRecord::Migration[7.0]
       t.string :localisation
       t.string :devise
       t.string :description
+      t.string :site_email
 
       t.timestamps
     end

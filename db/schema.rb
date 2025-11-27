@@ -168,7 +168,6 @@ ActiveRecord::Schema[7.0].define(version: 2025_11_27_015119) do
     t.string "time_zone"
     t.string "tel1"
     t.string "tel2"
-    t.string "email"
     t.string "whatsapp"
     t.string "facebook"
     t.string "linkedin"
@@ -179,6 +178,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_11_27_015119) do
     t.string "localisation"
     t.string "devise"
     t.string "description"
+    t.string "site_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

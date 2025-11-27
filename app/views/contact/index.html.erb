@@ -382,7 +382,7 @@
                             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                             <h3 class="contact-title">Envoyez un email</h3>
                             <p class="contact-info">Pour les demandes détaillées, joignez-nous par email avec tous les documents nécessaires.</p>
-                            <div class="contact-details"><%= SiteSetting.current.email %></div>
+                            <div class="contact-details"><%= SiteSetting.current.site_email %></div>
                             <div class="response-time">Réponse sous 24h</div>
                             <button class="btn btn-warning mt-3" onclick="sendEmail()">
                                 <i class="fas fa-envelope me-2"></i>Envoyer un email
@@ -772,7 +772,7 @@
         // Valeurs sorties côté serveur (échappées une fois, pas besoin de JSON.stringify)
         const CONTACT_TEL1  = "<%= j SiteSetting.current.tel1.to_s %>";
         const CONTACT_TEL2  = "<%= j SiteSetting.current.tel2.to_s %>";
-        const CONTACT_EMAIL = "<%= j SiteSetting.current.email.to_s %>";
+        const CONTACT_EMAIL = "<%= j SiteSetting.current.site_email.to_s %>";
         const CONTACT_WA    = "<%= j SiteSetting.current.whatsapp.to_s %>";
 
         // Fonctions de contact

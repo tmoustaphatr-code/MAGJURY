@@ -20,7 +20,7 @@ class Admin::SiteSettingsController < ApplicationController
   def site_setting_params
     params.require(:site_setting).permit(
       :site_name, :logo, :currency, :time_zone, :tel1, :tel2, :whatsapp, :description,
-      :facebook, :linkedin, :instagram, :tiktok, :youtube, :twitter, :localisation, :devise, :email
+      :facebook, :linkedin, :instagram, :tiktok, :youtube, :twitter, :localisation, :devise, :site_email
     )
   end
 end

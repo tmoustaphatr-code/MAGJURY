@@ -39,7 +39,7 @@ def site_whatsapp
 end
 
 def site_email
-  SiteSetting.current.email.presence || "contact@magjury.com"
+  SiteSetting.current.site_email.presence || "contact@magjury.com"
 end
 
 def site_social(network)

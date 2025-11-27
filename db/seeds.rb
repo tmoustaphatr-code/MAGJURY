@@ -26,7 +26,7 @@ setting.update!(
   time_zone:    'UTC+1',
   tel1:         '+33 1 23 45 67 89',
   tel2:         nil,
-  email:        'contact@magjury.com',
+  site_email:   'contact@magjury.com',
   whatsapp:     '33612345678',
   facebook:     'https://facebook.com/magjury',
   linkedin:     'https://linkedin.com/company/magjury',
