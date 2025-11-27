@@ -497,7 +497,7 @@
                 <%end%>
 
                 <div class="service-cta">
-                    <%= link_to service_path(service), class: "btn btn-warning" do %>
+                    <%= link_to contact_path, class: "btn btn-primary" do %>
                     <i class="fas fa-arrow-right me-2"></i>
                     En savoir plus
                     <% end %>
@@ -671,10 +671,10 @@
             <h2 class="cta-title">Prêt à optimiser votre pratique juridique ?</h2>
             <p class="cta-description">Rejoignez les centaines de professionnels qui nous font déjà confiance</p>
             <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">
+                <a href="<%=contact_path%>" class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">
                     <i class="fas fa-phone me-2"></i>
                     Nous contacter
-                </button>
+                </a>
                 <a href="#services" class="btn btn-outline-light btn-lg">
                     <i class="fas fa-list me-2"></i>
                     Voir tous les services

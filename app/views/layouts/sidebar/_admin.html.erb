@@ -144,17 +144,17 @@
   <%elsif current_user.bidder?%>
 
    <ul class="ux-nav">
-    <li class="ux-nav-item"><a href="<%= mes_encheres_path %>"><i class="fa fa-gavel"></i> Mes enchères</a></li>
-    <li class="ux-nav-item"><a href="<%= user_profile_path %>"><i class="fa fa-user"></i> Mon profil</a></li>
-    <li class="ux-nav-item"><a href="<%= edit_user_registration_path %>"><i class="fa fa-pencil"></i> Modifier mon compte</a></li>
+    <li class="ux-nav-item"><a href="<%= mes_encheres_path %>" class="ux-nav-link"><i class="fa fa-gavel"></i> Mes enchères</a></li>
+    <li class="ux-nav-item"><a href="<%= user_profile_path %>" class="ux-nav-link"><i class="fa fa-user"></i> Mon profil</a></li>
+    <li class="ux-nav-item"><a href="<%= edit_user_registration_path %>" class="ux-nav-link"><i class="fa fa-pencil"></i> Modifier mon compte</a></li>
   </ul>
 
     
   <%else%>
 
    <ul class="ux-nav">
-    <li class="ux-nav-item"><a href="<%= user_profile_path %>"><i class="fa fa-user"></i> Mon profil</a></li>
-    <li class="ux-nav-item"><a href="<%= edit_user_registration_path %>"><i class="fa fa-pencil"></i> Modifier mon compte</a></li>
+    <li class="ux-nav-item"><a href="<%= user_profile_path %>" class="ux-nav-link"><i class="fa fa-user"></i> Mon profil</a></li>
+    <li class="ux-nav-item"><a href="<%= edit_user_registration_path %>" class="ux-nav-link"><i class="fa fa-pencil"></i> Modifier mon compte</a></li>
   </ul>
 
   <%end%>

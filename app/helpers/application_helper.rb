@@ -19,7 +19,7 @@ end
 
 
 def currency_symbol
-  SiteSetting.current.currency_symbol || €
+  SiteSetting.current.currency_symbol.presence  || '€'
 end
 
 def devise
@@ -39,7 +39,7 @@ def site_whatsapp
 end
 
 def site_email
-  SiteSetting.current.email
+  SiteSetting.current.email.presence || "contact@magjury.com"
 end
 
 def site_social(network)

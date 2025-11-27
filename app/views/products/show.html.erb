@@ -28,7 +28,7 @@
 <%= content_for :title, "#{@product.title} | Boutique MagJury" %>
 
 <!-- HERO -->
-<section class="contact-header">
+<section class="contact-header mt-5">
   <div class="container">
     <h1 class="display-5 fw-bold"><%= @product.title %></h1>
     <% if @product.product_category.present? %>
@@ -79,7 +79,7 @@
 
           <!-- BOUTON WHATSAPP -->
           <div class="d-grid mb-4">
-            <%= link_to "https://wa.me/?text=#{u("Bonjour, je suis intéressé par le produit : #{@product.title} - #{product_url(@product)}")}",
+            <%= link_to "https://wa.me/#{SiteSetting.current.whatsapp.gsub(/\D/,'')}?text=#{u("Bonjour, je suis intéressé par le produit : #{@product.title} - #{product_url(@product)}")}",
                         target: "_blank", class: "btn btn-success btn-lg" do %>
               <i class="bi bi-whatsapp me-2"></i>Commander via WhatsApp
             <% end %>

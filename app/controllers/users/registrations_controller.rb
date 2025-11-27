@@ -54,12 +54,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     if resource.bidder?
-      completion_enchere_profile_profile_path(resource)
-    elsif resource.admin?
-      dashboard_index_path
-    elsif resource.super_admin?
-      dashboard_index_path
-    elsif resource.redacteur?
+      # profil enchérisseur complet ?
+      if resource.nom.present? &&
+        resource.prenom.present? &&
+        resource.phone.present? &&
+        resource.address.present? &&
+        resource.profile.present?
+
+        mes_encheres_path
+      else
+        completion_enchere_profile_profile_path(resource)
+      end
+    elsif resource.admin? || resource.super_admin? || resource.redacteur?
       dashboard_index_path
     else
       user_profile_path

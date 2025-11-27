@@ -360,106 +360,52 @@
         <div class="container">
             <div class="row">
                 <!-- Téléphone -->
-                <div class="col-lg-4 col-md-6 mb-3">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                <% if SiteSetting.current.tel1.present? %>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <h3 class="contact-title">Appelez-nous</h3>
                         <p class="contact-info">Discutez directement avec nos conseillers juridiques pour des réponses immédiates.</p>
-                        <div class="contact-details">+33 1 23 45 67 89</div>
+                        <div class="contact-details"><%= SiteSetting.current.tel1 %></div>
                         <div class="response-time">Lun - Ven: 9h-18h • Sam: 9h-12h</div>
                         <button class="btn btn-warning mt-3" onclick="callNumber()">
-                            <i class="fas fa-phone me-2"></i>
-                            Appeler maintenant
+                            <i class="fas fa-phone me-2"></i>Appeler maintenant
                         </button>
-                    </div>
-                </div>
-
-                <!-- Email -->
-                <div class="col-lg-4 col-md-6 mb-3">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
                         </div>
-                        <h3 class="contact-title">Envoyez un email</h3>
-                        <p class="contact-info">Pour les demandes détaillées, joignez-nous par email avec tous les documents nécessaires.</p>
-                        <div class="contact-details">contact@magjury.com</div>
-                        <div class="response-time">Réponse sous 24h</div>
-                        <button class="btn btn-warning mt-3" onclick="sendEmail()">
-                            <i class="fas fa-envelope me-2"></i>
-                            Envoyer un email
-                        </button>
-                    </div>
-                </div>
+                    </div> 
+                    <% end %>
 
-                <!-- WhatsApp -->
-                <div class="col-lg-4 col-md-6 mb-3">
-                    <div class="contact-card">
-                        <div class="contact-icon whatsapp">
-                            <i class="fab fa-whatsapp"></i>
+                    <!-- Email -->
+                    <% if SiteSetting.current.email.present? %>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <h3 class="contact-title">Envoyez un email</h3>
+                            <p class="contact-info">Pour les demandes détaillées, joignez-nous par email avec tous les documents nécessaires.</p>
+                            <div class="contact-details"><%= SiteSetting.current.email %></div>
+                            <div class="response-time">Réponse sous 24h</div>
+                            <button class="btn btn-warning mt-3" onclick="sendEmail()">
+                                <i class="fas fa-envelope me-2"></i>Envoyer un email
+                            </button>
+                            </div>
                         </div>
-                        <h3 class="contact-title">WhatsApp</h3>
-                        <p class="contact-info">Échangez en direct avec nos experts via WhatsApp pour des conseils rapides.</p>
-                        <div class="contact-details">+33 6 12 34 56 78</div>
-                        <div class="response-time">Réponse instantanée</div>
-                        <button class="btn btn-success mt-3" onclick="openWhatsApp()">
-                            <i class="fab fa-whatsapp me-2"></i>
-                            Ouvrir WhatsApp
-                        </button>
-                    </div>
-                </div>
+                    <% end %>
 
-                <!-- Telegram -->
-                <div class="col-lg-4 col-md-6 mb-3">
-                    <div class="contact-card">
-                        <div class="contact-icon telegram">
-                            <i class="fab fa-telegram"></i>
+                    <!-- WhatsApp -->
+                    <% if SiteSetting.current.whatsapp.present? %>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="contact-card">
+                            <div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                            <h3 class="contact-title">WhatsApp</h3>
+                            <p class="contact-info">Échangez en direct avec nos experts via WhatsApp pour des conseils rapides.</p>
+                            <div class="contact-details"><%= SiteSetting.current.whatsapp %></div>
+                            <div class="response-time">Réponse instantanée</div>
+                            <button class="btn btn-success mt-3" onclick="openWhatsApp()">
+                                <i class="fab fa-whatsapp me-2"></i>Ouvrir WhatsApp
+                            </button>
+                            </div>
                         </div>
-                        <h3 class="contact-title">Telegram</h3>
-                        <p class="contact-info">Contactez-nous via Telegram pour des échanges sécurisés et rapides.</p>
-                        <div class="contact-details">@magjury_support</div>
-                        <div class="response-time">Réponse sous 1h</div>
-                        <button class="btn btn-primary mt-3" onclick="openTelegram()">
-                            <i class="fab fa-telegram me-2"></i>
-                            Ouvrir Telegram
-                        </button>
-                    </div>
-                </div>
-
-                <!-- LinkedIn -->
-                <div class="col-lg-4 col-md-6 mb-3">
-                    <div class="contact-card">
-                        <div class="contact-icon linkedin">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <h3 class="contact-title">LinkedIn</h3>
-                        <p class="contact-info">Suivez notre actualité et contactez-nous via LinkedIn pour des échanges professionnels.</p>
-                        <div class="contact-details">MAGJURY Official</div>
-                        <div class="response-time">Réponse sous 48h</div>
-                        <button class="btn btn-linkedin mt-3" onclick="openLinkedIn()" style="background: #0077b5; color: white; border: none;">
-                            <i class="fab fa-linkedin me-2"></i>
-                            Visiter LinkedIn
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Rendez-vous -->
-                <div class="col-lg-4 col-md-6 mb-3">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
-                        <h3 class="contact-title">Rendez-vous</h3>
-                        <p class="contact-info">Prenez rendez-vous en ligne pour une consultation en face à face ou visioconférence.</p>
-                        <div class="contact-details">Consultation sur RDV</div>
-                        <div class="response-time">Disponible 7j/7</div>
-                        <button class="btn btn-warning mt-3" data-bs-toggle="modal" data-bs-target="#appointmentModal">
-                            <i class="fas fa-calendar me-2"></i>
-                            Prendre RDV
-                        </button>
-                    </div>
-                </div>
+                    <% end %>
             </div>
         </div>
     </section>
@@ -823,43 +769,55 @@
     <!-- Bootstrap & JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Valeurs sorties côté serveur (échappées une fois, pas besoin de JSON.stringify)
+        const CONTACT_TEL1  = "<%= j SiteSetting.current.tel1.to_s %>";
+        const CONTACT_TEL2  = "<%= j SiteSetting.current.tel2.to_s %>";
+        const CONTACT_EMAIL = "<%= j SiteSetting.current.email.to_s %>";
+        const CONTACT_WA    = "<%= j SiteSetting.current.whatsapp.to_s %>";
+
         // Fonctions de contact
         function callNumber() {
-            if (confirm('Appeler le +33 1 23 45 67 89 ?')) {
-                window.location.href = 'tel:+33123456789';
+            if (!CONTACT_TEL1) return;
+            if (confirm(`Appeler le ${CONTACT_TEL1} ?`)) {
+            window.location.href = `tel:${CONTACT_TEL1.replace(/\s/g,'')}`;
             }
         }
 
         function callEmergency() {
-            if (confirm('Appeler le numéro d\'urgence 24h/24 ?')) {
-                window.location.href = 'tel:+33612345678';
+            if (!CONTACT_TEL2) return;
+            if (confirm(`Appeler le numéro d'urgence 24h/24 (${CONTACT_TEL2}) ?`)) {
+            window.location.href = `tel:${CONTACT_TEL2.replace(/\s/g,'')}`;
             }
         }
 
         function sendEmail() {
-            window.location.href = 'mailto:contact@magjury.com?subject=Demande%20d\'information&body=Bonjour,%0D%0A%0D%0AJ\'aimerais obtenir des informations concernant...';
+            if (!CONTACT_EMAIL) return;
+            const subject = "Demande d'information";
+            const body    = "Bonjour,\n\nJ'aimerais obtenir des informations concernant...";
+            window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
 
         function openWhatsApp() {
-            const message = "Bonjour, je souhaite obtenir des informations sur vos services juridiques.";
-            const url = `https://wa.me/33612345678?text=${encodeURIComponent(message)}`;
-            window.open(url, '_blank');
+            if (!CONTACT_WA) return;
+            const msg = "Bonjour, je souhaite obtenir des informations sur vos services juridiques.";
+            window.open(`https://wa.me/${CONTACT_WA.replace(/\D/g,'')}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        function openTelegram() {
-            window.open('https://t.me/magjury_support', '_blank');
-        }
 
-        function openLinkedIn() {
-            window.open('https://linkedin.com/company/magjury', '_blank');
-        }
+         //function openTelegram() {
+         //    window.open('https://t.me/magjury_support', '_blank');
+         //}
 
-        function openTwitter() {
-            window.open('https://twitter.com/magjury', '_blank');
-        }
+         //function openLinkedIn() {
+           //  window.open('https://linkedin.com/company/magjury', '_blank');
+         //}
 
-        function openFacebook() {
-            window.open('https://facebook.com/magjury', '_blank');
-        }
+         //function openTwitter() {
+         //    window.open('https://twitter.com/magjury', '_blank');
+         //}
+
+         //function openFacebook() {
+          //   window.open('https://facebook.com/magjury', '_blank');
+         //}
 
       </script>
