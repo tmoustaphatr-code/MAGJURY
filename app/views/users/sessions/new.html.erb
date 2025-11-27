@@ -380,7 +380,7 @@
             <% end %>
 
             <!-- Formulaire Devise -->
-            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "devise-form" }) do |f| %>
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }, html: { class: "devise-form" }) do |f| %>
                 <div class="form-group">
                     <label for="user_email">Adresse email</label>
                     <div class="input-with-icon">
@@ -427,10 +427,10 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="login-button" id="submit-btn">
-                        <span class="button-text">Se connecter</span>
-                        <div class="loading-spinner"></div>
-                    </button>
+                    <%= f.submit "Se connecter",
+                                class: "login-button",
+                                id: "submit-btn",
+                                data: { disable_with: false } %>
                 </div>
             <% end %>
 

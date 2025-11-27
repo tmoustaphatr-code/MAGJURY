@@ -10,6 +10,20 @@ class Admin::UsersController < ApplicationController
 
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    @user.contributor = params[:user][:contributor] == '1'
+    if @user.save
+      redirect_to admin_user_path(@user), notice: "Utilisateur créé avec succès."
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def show
   end
 
@@ -45,6 +59,10 @@ class Admin::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:nom, :prenom, :email, :blocked, :role, :status, :phone, :address, :profession, :domaine, :contributor, :bio, :linkedin, :twitter, :facebook, :instagram, :tiktok)
+  params.require(:user).permit(:nom, :prenom, :email, :blocked, :phone, :address,
+                               :profession, :domaine, :role, :bio, :password,
+                               :password_confirmation, :status,
+                               :linkedin, :twitter, :facebook, :instagram, :tiktok)
+                               .merge(contributor: params[:user][:contributor] == '1')
   end
 end

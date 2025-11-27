@@ -14,11 +14,12 @@
       <%= image_tag product.image.attached? ? product.image : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                     alt: product.title %>
       <div class="produit-overlay">
-        <%= link_to "https://wa.me/#{SiteSetting.current.whatsapp.gsub(/\D/,'')}?text=#{u("Bonjour, je suis intéressé par le produit : #{product.title} - #{product_url(product)}")}",
-                    target: "_blank",
-                    class: "btn-ajouter-panier" do %>
-          <i class="bi bi-whatsapp"></i> Commander
-        <% end %>
+        <% whatsapp_nb = SiteSetting.current.whatsapp.presence || "0164427200" %>
+								<%= link_to "https://wa.me/#{whatsapp_nb.gsub(/\D/,'')}?text=#{u("Bonjour, je suis intéressé par le produit : #{product.title} - #{product_url(product)}")}",
+											target: "_blank",
+											class: "btn-ajouter-panier" do %>
+								<i class="bi bi-whatsapp"></i> commander
+							<% end %>
         <%= link_to product_path(product), class: "btn-details" do %>
           <i class="bi bi-eye"></i> Voir détails
         <% end %>

@@ -448,10 +448,11 @@
 						<%= image_tag product.image.attached? ? product.image : "livre1.jpg",
                     	alt: product.title, class: "produit-img"  %>
 						<div class="produit-overlay">
-							<%= link_to "https://wa.me/#{SiteSetting.current.whatsapp.gsub(/\D/,'')}?text=#{u("Bonjour, je suis intéressé par le produit : #{product.title} - #{product_url(product)}")}",
-										target: "_blank",
-										class: "btn-ajouter-panier" do %>
-							<i class="bi bi-whatsapp"></i> commander
+							<% whatsapp_nb = SiteSetting.current.whatsapp.presence || "0164427200" %>
+								<%= link_to "https://wa.me/#{whatsapp_nb.gsub(/\D/,'')}?text=#{u("Bonjour, je suis intéressé par le produit : #{product.title} - #{product_url(product)}")}",
+											target: "_blank",
+											class: "btn-ajouter-panier" do %>
+								<i class="bi bi-whatsapp"></i> commander
 							<% end %>
 							<%= link_to product_path(product), class: "btn-details" do %>
 								<i class="bi bi-eye"></i> Voir détails

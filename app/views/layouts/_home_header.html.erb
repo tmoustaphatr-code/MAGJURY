@@ -122,7 +122,9 @@
 				<circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
 			</svg>
 			<span class="magjury-account__txt">Mon compte</span>
+			<%if user_signed_in? %>
 			<span class="magjury-account__dot"></span>
+			<%end%>
 			</a>
 		</div>
 		</div>

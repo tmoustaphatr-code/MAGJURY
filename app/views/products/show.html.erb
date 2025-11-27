@@ -79,10 +79,12 @@
 
           <!-- BOUTON WHATSAPP -->
           <div class="d-grid mb-4">
-            <%= link_to "https://wa.me/#{SiteSetting.current.whatsapp.gsub(/\D/,'')}?text=#{u("Bonjour, je suis intéressé par le produit : #{@product.title} - #{product_url(@product)}")}",
-                        target: "_blank", class: "btn btn-success btn-lg" do %>
-              <i class="bi bi-whatsapp me-2"></i>Commander via WhatsApp
-            <% end %>
+            <% whatsapp_nb = SiteSetting.current.whatsapp.presence || "0164427200" %>
+								<%= link_to "https://wa.me/#{whatsapp_nb.gsub(/\D/,'')}?text=#{u("Bonjour, je suis intéressé par le produit : #{@product.title} - #{product_url(@product)}")}",
+											target: "_blank",
+											class: "btn-ajouter-panier" do %>
+								<i class="bi bi-whatsapp"></i> commander
+							<% end %>
           </div>
 
     
