@@ -5,9 +5,19 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+# db/seeds/auctions.rb
 
 # Création ou mise à jour de l'admin racine
-admin = User.find_or_create_by!(email: "admin@magfury.com") do |u|
+admin2 = User.find_or_create_by!(email: "admin2@magjury.com") do |u|
+  u.nom = "Admin"
+  u.prenom = "Super"
+  u.password = "123456"
+  u.password_confirmation = "123456"
+  u.role = "admin"
+  u.status = "approved"
+end
+
+admin = User.find_or_create_by!(email: "admin@magjury.com") do |u|
   u.nom = "Admin"
   u.prenom = "Super"
   u.password = "123456"
@@ -16,3 +26,4 @@ admin = User.find_or_create_by!(email: "admin@magfury.com") do |u|
 end
 
 puts "Admin racine créé : #{admin.email}"
+

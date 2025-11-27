@@ -1,4 +1,33 @@
 Rails.application.routes.draw do
+  resources :job_offers
+  get "emplois", to: "job_offers#emplois", as: :emplois
+  resources :product_categories
+  resources :products
+  get "boutique", to: "boutique#index", as: :boutique
+  get 'maintenance', to: 'maintenance#index', as: :maintenance
+  get 'contact', to: 'contact#index', as: :contact
+  
+  namespace :admin do
+    resources :comments, only: %i[index update destroy]
+  end
+  get 'profiles/completion_enchere_profile'
+  get 'profiles/save_enchere_profile'
+ # config/routes.rb
+
+get "mes_encheres", to: "auctions#mes_encheres", as: :mes_encheres
+get "offre_de_service", to: "services#offre_de_service", as: :offre_de_service
+resources :services
+resources :auctions do
+  member do
+    patch :publish
+    patch :start
+    patch :close
+  end
+  resources :bids, only: %i[create]
+end
+
+# Page d'accueil des enchères
+get "encheres", to: "encheres#index", as: :encheres
 
   root 'home#accueil'
 
@@ -49,6 +78,15 @@ get 'magazine', to: 'magazine#index', as: :magazine
         patch :block
         patch :unblock
       end
+    end
+    resource :site_setting, only: %i[edit update], path: "parametres"
+  end
+
+  # config/routes.rb
+  resource :profile, only: %i[show update] do
+    member do
+      get :completion_enchere_profile # ← page de formulaire
+      patch :save_enchere_profile     # ← soumission
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

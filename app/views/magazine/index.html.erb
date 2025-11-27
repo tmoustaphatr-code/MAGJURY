@@ -645,70 +645,71 @@
 
 <div class="magazine-layout mt-5">
  <!-- HERO SECTION AVEC SLIDER -->
-<section class="magazine-hero-section py-5">
-  <div class="container">
-    <div class="row align-items-stretch">
-      <!-- Slider Principal Pleine Largeur -->
-      <div class="col-12">
-        <div class="magazine-hero-slider magazine-slider-controls">
-          <div id="magazineHeroCarousel" class="carousel slide" data-bs-ride="carousel">
-            <!-- Indicateurs -->
-            <div class="magazine-slider-indicators">
-              <% @featured.each_with_index do |post, index| %>
-                <button type="button" 
-                        data-bs-target="#magazineHeroCarousel" 
-                        data-bs-slide-to="<%= index %>" 
-                        class="<%= 'active' if index == 0 %>"
-                        aria-current="<%= 'true' if index == 0 %>"
-                        aria-label="Slide <%= index + 1 %>"></button>
-              <% end %>
-            </div>
-
-            <!-- Slides -->
-            <div class="carousel-inner">
-              <% @featured.each_with_index do |post, index| %>
-                <div class="carousel-item <%= 'active' if index == 0 %>" data-bs-interval="5000">
-                  <% if post.cover_image.attached? %>
-                    <%= image_tag url_for(post.cover_image), class: "carousel-image" %>
-                  <% else %>
-                    <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                         class="carousel-image" alt="<%= post.title %>">
+  <% if @featured.any?%>
+    <section class="magazine-hero-section py-5">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <!-- Slider Principal Pleine Largeur -->
+          <div class="col-12">
+            <div class="magazine-hero-slider magazine-slider-controls">
+              <div id="magazineHeroCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicateurs -->
+                <div class="magazine-slider-indicators">
+                  <% @featured.each_with_index do |post, index| %>
+                    <button type="button" 
+                            data-bs-target="#magazineHeroCarousel" 
+                            data-bs-slide-to="<%= index %>" 
+                            class="<%= 'active' if index == 0 %>"
+                            aria-current="<%= 'true' if index == 0 %>"
+                            aria-label="Slide <%= index + 1 %>"></button>
                   <% end %>
-                  
-                  <div class="magazine-slider-content">
-                    <span class="magazine-slider-badge">★ ARTICLE VEDETTE</span>
-                    <h1 class="magazine-slider-title" style="font-size: clamp(1.25rem, 5vw, 2.75rem);">
-                      <%= link_to post.title, post_path(post) %>
-                    </h1>
-                    <p class="magazine-slider-excerpt d-none d-md-block">
-                      <%= raw(truncate(strip_tags(post.content.to_s), length: 150)) %>
-                    </p>
-                    <div class="magazine-slider-meta">
-                      <span><i class="far fa-comments"></i> <%= post.comments.count %></span>
-                      <span><i class="far fa-eye"></i> <%= post.views %></span>
-                      <span><i class="far fa-clock"></i> <%= time_ago_in_words(post.created_at) %></span>
-                    </div>
-                  </div>
                 </div>
-              <% end %>
-            </div>
 
-            <!-- Contrôles -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#magazineHeroCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Précédent</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#magazineHeroCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Suivant</span>
-            </button>
+                <!-- Slides -->
+                <div class="carousel-inner">
+                  <% @featured.each_with_index do |post, index| %>
+                    <div class="carousel-item <%= 'active' if index == 0 %>" data-bs-interval="5000">
+                      <% if post.cover_image.attached? %>
+                        <%= image_tag url_for(post.cover_image), class: "carousel-image" %>
+                      <% else %>
+                        <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                            class="carousel-image" alt="<%= post.title %>">
+                      <% end %>
+                      
+                      <div class="magazine-slider-content">
+                        <span class="magazine-slider-badge">★ ARTICLE VEDETTE</span>
+                        <h1 class="magazine-slider-title" style="font-size: clamp(1.25rem, 5vw, 2.75rem);">
+                          <%= link_to post.title, post_path(post) %>
+                        </h1>
+                        <p class="magazine-slider-excerpt d-none d-md-block">
+                          <%= raw(truncate(strip_tags(post.content.to_s), length: 150)) %>
+                        </p>
+                        <div class="magazine-slider-meta">
+                          <span><i class="far fa-comments"></i> <%= post.comments.count %></span>
+                          <span><i class="far fa-eye"></i> <%= post.views %></span>
+                          <span><i class="far fa-clock"></i> <%= time_ago_in_words(post.created_at) %></span>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+
+                <!-- Contrôles -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#magazineHeroCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Précédent</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#magazineHeroCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Suivant</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
+    </section>
+  <%end%>
 
 
 

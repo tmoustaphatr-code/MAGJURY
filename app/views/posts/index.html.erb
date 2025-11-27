@@ -1,48 +1,35 @@
-<%# app/views/posts/index.html.erb – gestion articles %>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
-:root{
-  --joy:#ff6f61;
-  --joy-dark:#e55a4f;
-  --bg:#fffaf5;
-  --radius:8px;
-  --shadow:0 4px 12px rgba(0,0,0,.06);
-}
-
-.post-mgmt{width:90%;max-width:1200px;margin:2rem auto;font-family:'Quicksand',sans-serif;}
-.post-mgmt h1{margin-bottom:1.5rem;color:var(--joy-dark);}
-
-/* ===== TABLEAU DESKTOP ===== */
-.table-wrap{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
-table{width:100%;border-collapse:collapse;}
-thead{background:var(--joy);color:#fff;}
-th,td{padding:.75rem 1rem;text-align:left;font-size:.9rem;}
-tbody tr:nth-child(even){background:#fdf7f7;}
-tbody tr:hover{background:#ffecea;}
-
-/* image cercle */
-.img-circle{width:40px;height:40px;border-radius:50%;object-fit:cover;}
-
-/* badges statut */
-.badge{display:inline-block;padding:.25rem .5rem;font-size:.7rem;border-radius:12px;color:#fff;}
-.badge.published{background:#27ae60;}
-.badge.draft{background:#95a5a6;}
-
-/* actions icônes */
-.actions a{margin-right:.5rem;color:#555;font-size:1.2rem;transition:color .2s;}
-.actions a:hover{color:var(--joy);}
-.actions .delete:hover{color:#e74c3c;}
-
-
+  .table-hover tbody tr:hover { background-color: #f8f9fa; }
+.admin-header { background: #1f2937; }
 </style>
 
-<div class="post-mgmt">
-  <h1>Gestion des articles</h1>
+<!-- app/views/admin/posts/index.html.erb (ou votre vue existante) -->
+<%= content_for :title, "Admin - Articles" %>
 
-  <div class="table-wrap">
-    <!-- Desktop : vrai tableau -->
-    <table>
-      <thead>
+<section class="admin-header bg-dark text-white py-4">
+  <div class="container">
+    <h1 class="mb-0">Gestion des articles</h1>
+  </div>
+</section>
+
+<div class="container my-4">
+  <!-- BARRE & FILTRES -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <%= link_to "➕ Nouvel article", new_post_path, class: "btn btn-primary btn-sm" %>
+    <span class="badge bg-secondary"><%= @posts.count %> articles</span>
+  </div>
+
+  <%= form_with url: posts_path, method: :get, local: false, html: { class: "row g-2 mb-4" } do |f| %>
+    <div class="col-md-4"><%= f.text_field :q, placeholder: "Titre, tag...", value: params[:q], class: "form-control form-control-sm" %></div>
+    <div class="col-md-3"><%= f.select :status, options_for_select(Post.statuses.keys.map { |s| [s.humanize, s] }, params[:status]), { include_blank: "Tous statuts" }, class: "form-select form-select-sm" %></div>
+    <div class="col-md-3"><%= f.select :category_id, options_from_collection_for_select(Category.order(:name), :id, :name, params[:category_id]), { include_blank: "Toutes catégories" }, class: "form-select form-select-sm" %></div>
+    <div class="col-md-2 d-grid"><%= f.submit "Filtrer", class: "btn btn-outline-secondary btn-sm" %></div>
+  <% end %>
+
+  <!-- TABLEAU PRO -->
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead class="table-light">
         <tr>
           <th>#</th>
           <th>Image</th>
@@ -61,27 +48,35 @@ tbody tr:hover{background:#ffecea;}
             <td><%= post.id %></td>
             <td>
               <% if post.cover_image.attached? %>
-                <%= cl_image_tag post.cover_image.key, width: 40, height: 40, crop: :thumb, class: "img-circle" %>
+                <%= cl_image_tag post.cover_image.key, width: 40, height: 40, crop: :thumb, class: "rounded-circle" %>
               <% else %>
-                <div class="img-circle" style="background:#ddd;"></div>
+                <div class="rounded-circle bg-secondary" style="width:40px;height:40px;"></div>
               <% end %>
             </td>
-            <td><%= post.title %></td>
-            <td><%= post.category&.name %></td>
-            <td><%= post.tags.map(&:name).join(', ') %></td>
+            <td><%= link_to post.title, post_path(post), target: "_blank", class: "text-decoration-none fw-bold" %></td>
+            <td><%= post.category&.name || "—" %></td>
+            <td><%= post.tags.map(&:name).join(", ") %></td>
             <td><%= post.views %></td>
-            <td><%= post.user&.email || '—' %></td>
+            <td><%= post.user&.email || "—" %></td>
+            <td><%= render "admin/posts/badge_status", status: post.status %></td>
             <td>
-              <span class="badge <%= post.status %>"><%= post.status.humanize %></span>
-            </td>
-            <td class="actions">
-              <%= link_to "👁", post_path(post), title: "Voir" %>
-              <%= link_to "✏", edit_post_path(post), title: "Éditer" %>
-              <%= link_to "🗑", post_path(post), method: :delete,
-                          data: { confirm: "Supprimer ?" }, class: "delete", title: "Supprimer" %>
+              <div class="btn-group btn-group-sm">
+                <%= link_to "👁", post_path(post), title: "Voir", class: "btn btn-outline-primary btn-sm" %>
+                <%= link_to "✏", edit_post_path(post), title: "Éditer", class: "btn btn-outline-secondary btn-sm" %>
+                <%= button_to "🗑", post_path(post), method: :delete,
+                              form: { data: { turbo_confirm: "Supprimer cet article ?" } },
+                              class: "btn btn-outline-danger btn-sm" %>
+              </div>
             </td>
           </tr>
         <% end %>
       </tbody>
     </table>
+  </div>
 
+  <% if @posts.empty? %>
+    <div class="text-center py-5">
+      <p class="text-muted fs-5">Aucun article ne correspond à vos critères.</p>
+    </div>
+  <% end %>
+</div>

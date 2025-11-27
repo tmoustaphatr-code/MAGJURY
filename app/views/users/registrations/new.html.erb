@@ -492,6 +492,8 @@
                     </div>
                 </div>
 
+                <%= hidden_field_tag :role, params[:role] if %w[bidder].include?(params[:role]) %>
+
                 <div class="form-actions">
                     <button type="submit" class="signup-button" id="submit-btn">
                         <span class="button-text">Créer mon compte</span>

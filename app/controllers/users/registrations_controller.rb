@@ -10,9 +10,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    # on force le role depuis le param caché
+    params[:user][:role] = params[:role] if %w[bidder].include?(params[:role])
+    super
+  end
 
   # GET /resource/edit
   # def edit
@@ -51,8 +53,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def after_sign_up_path_for(resource)
-      dashboard_index_path
+  if resource.bidder?
+    completion_enchere_profile_profile_path(resource)
+  else
+    dashboard_index_path
   end
+end
 
    protected
       def configure_permitted_parameters

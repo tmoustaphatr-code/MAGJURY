@@ -5,7 +5,7 @@ class Admin::UsersController < ApplicationController
 
 
   def index
-    @users = User.order(:id).page(params[:page]).per(10)
+    @users = User.all
 
   end
 
@@ -44,6 +44,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:nom, :prenom, :email, :blocked, :role)
+    params.require(:user).permit(:nom, :prenom, :email, :blocked, :role, :status, :phone, :address, :profession, :domaine, :contributor, :bio, :linkedin, :twitter, :facebook, :instagram, :tiktok)
   end
 end

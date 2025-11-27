@@ -4,7 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  ROLES = %w[visiteur abonne redacteur admin super_admin]
+  ROLES = %w[visiteur abonne redacteur admin super_admin bidder]
+
+  enum status: { pending: 0, approved: 1, rejected: 2 }
+
+  has_many :auctions
+  has_many :bids
 
   validates :role, inclusion: { in: ROLES }
 
@@ -12,7 +17,27 @@ class User < ApplicationRecord
     role == requested_role.to_s
   end
 
+
+  enum contributor: { normal: false, contributor: true }, _prefix: :contrib
+
+  scope :contributors, -> { where(contributor: true) }
+
+  def full_name
+    "#{prenom} #{nom}".presence || email.split("@").first.humanize
+  end
+
+  def social_links
+    {
+      linkedin: linkedin,
+      twitter: twitter,
+      facebook: facebook,
+      instagram: instagram,
+      tiktok: tiktok
+    }.compact
+  end
+
   has_many :posts
+  has_many :products
 
   has_one_attached :profile
 
@@ -30,6 +55,11 @@ class User < ApplicationRecord
     role == 'admin'
   end
 
+  def bidder?
+    role == 'bidder'
+  end
+
+
   def abonne?
     role == 'abonne'
   end
@@ -44,6 +74,23 @@ class User < ApplicationRecord
 
   def initiales
     "#{prenom&.first&.upcase}#{nom&.first&.upcase}"
+  end
+
+  # Nouvelles relations pour les enchères
+  has_many :bids, dependent: :destroy
+  has_many :auctions, through: :bids
+  has_many :watchlists, dependent: :destroy
+  has_many :watched_auctions, through: :watchlists, source: :auction
+  
+  # Méthodes pour les enchères
+  def active_bids
+    bids.joins(:auction).where(auctions: { status: :live })
+  end
+  
+  def won_auctions
+    auctions.ended.joins(:bids)
+            .where(bids: { amount: auctions.select('MAX(bids.amount)') })
+            .distinct
   end
 
 end

@@ -4,4 +4,28 @@ module ApplicationHelper
   def can_edit_post?(post)
     user_signed_in? && (current_user.admin? || current_user.redacteur? || post.user == current_user)
   end
+  # app/helpers/application_helper.rb
+def site_name
+  SiteSetting.current.site_name
+end
+
+def currency_symbol
+  SiteSetting.current.currency_symbol
+end
+
+def site_time_zone
+  SiteSetting.current.time_zone
+end
+
+def site_tel1
+  SiteSetting.current.tel1
+end
+
+def site_whatsapp
+  SiteSetting.current.whatsapp
+end
+
+def site_social(network)
+  SiteSetting.current.send(network) # :facebook, :linkedin, etc.
+end
 end
