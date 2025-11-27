@@ -16,7 +16,9 @@
     <div class="card-header param-header text-white text-center py-4">
       <h3 class="mb-0"><i class="bi bi-gear-fill me-2"></i> Paramètres généraux</h3>
     </div>
-
+    <% if notice %>
+      <div class="alert alert-success"><%= notice %></div>
+    <% end %>
     <!-- CORPS DU FORMULAIRE -->
     <div class="card-body p-5">
       <%= form_with(model: [:admin, @setting], local: true, html: { multipart: true }) do |f| %>
@@ -39,6 +41,16 @@
           <div class="col-md-6">
             <%= f.label :localisation, "Localisation (ville/pays)", class: "form-label fw-bold" %>
             <%= f.text_field :localisation, class: "form-control", placeholder: "Paris, France" %>
+          </div>
+          <div class="col-md-6">
+            <%= f.label :email, "Email", class: "form-label fw-bold" %>
+            <%= f.text_field :email, class: "form-control", placeholder: "contact@magjury.com" %>
+          </div>
+        </div>
+         <div class="row g-3 mb-4">
+          <div class="col-md-12">
+            <%= f.label :description, "Courte description", class: "form-label fw-bold" %>
+            <%= f.text_area :description, class: "tinymce", value: f.object.description%>
           </div>
         </div>
 

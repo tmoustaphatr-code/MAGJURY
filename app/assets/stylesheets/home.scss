@@ -1307,6 +1307,11 @@
             vertical-align: middle;
         }
 
+        @media (max-width: 768px){
+          .slider-controls{
+            display: none;
+          }
+        }
         /* ---------------  VERSION DESKTOP  --------------- */
         @media (min-width: 768px) {
             .team-section {
@@ -1412,10 +1417,10 @@
                 font-size: 1.2rem;
             }
 
-            .slider-controls {
-                flex-direction: column;
-                gap: 20px;
-            }
+            // .slider-controls {
+            //     flex-direction: column;
+            //     gap: 20px;
+            // }
 
             .scroll-indicator {
                 display: block;
@@ -1644,7 +1649,7 @@
 }
 
 .produit-categorie {
-    color: var(--magjury-gold);
+    color: white!important;
     font-size: 0.9rem;
     font-weight: 500;
     display: block;

@@ -1,7 +1,7 @@
 # app/controllers/job_offers_controller.rb
 class JobOffersController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show]
-  before_action :require_admin!, only: %i[new create edit update destroy]
+  before_action :authenticate_user!, except: %i[emplois show]
+  before_action :require_admin!, except: [:emplois, :show]
   before_action :set_job_offer, only: %i[show edit update destroy]
   layout 'dashboard', except: [:emplois]
   # PUBLIC
@@ -59,10 +59,6 @@ class JobOffersController < ApplicationController
 
   def set_job_offer
     @job_offer = JobOffer.find(params[:id])
-  end
-
-  def require_admin!
-    redirect_to root_path, alert: "Accès interdit." unless current_user.admin?
   end
 
   def filter_collection

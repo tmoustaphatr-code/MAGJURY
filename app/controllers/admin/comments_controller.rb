@@ -1,7 +1,7 @@
 # app/controllers/admin/comments_controller.rb
 class Admin::CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_admin!
+  before_action :require_redacteur!
   layout 'dashboard'
 
   def index
@@ -23,8 +23,6 @@ class Admin::CommentsController < ApplicationController
   end
 
   private
-
-  def require_admin!; redirect_to root_path, alert: "Interdit" unless current_user.admin?; end
 
   def filter_collection
     @comments = @comments.where(post_id: params[:post_id]) if params[:post_id].present?

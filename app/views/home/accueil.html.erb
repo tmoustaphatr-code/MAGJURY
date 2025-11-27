@@ -59,8 +59,8 @@
 
 	<!-- Services Section -->
 		<section class="services-section" id="next-section">
-			<div class="icon-one wow zoomIn" data-wow-delay="250ms" data-wow-duration="1500ms" style="background-image:url(images/icons/icon-1.png)"></div>
-			<div class="icon-two wow fadeInRight" data-wow-delay="500ms" data-wow-duration="1500ms" style="background-image:url(images/icons/icon-2.png)"></div>
+			<div class="icon-one wow zoomIn" data-wow-delay="250ms" data-wow-duration="1500ms"style="background-image: url('<%= asset_path("icon-1.png") %>')"></div>
+			<div class="icon-two wow fadeInRight" data-wow-delay="500ms" data-wow-duration="1500ms" style="background-image: url('<%= asset_path("icon-2.png") %>')"></div>
 			<div class="container">
 				<div class="row clearfix">
 							
@@ -71,9 +71,9 @@
 							<div class="border-two"></div>
 							<div class="content">
 								<div class="icon-box">
-									<span class="icon flaticon-family"></span>
+									<i class="fas fa-lightbulb"></i>
 								</div>
-								<h6><a href="">Conseils</a></h6>
+								<h6>Conseils</h6>
 								<div class="text">Permettre aux citoyens de connaitre leur droit, savoir le réclamer et saisir les
 									juridictions en cas de problème.</div>
 							</div>
@@ -87,9 +87,9 @@
 							<div class="border-two"></div>
 							<div class="content">
 								<div class="icon-box">
-									<span class="icon flaticon-fingerprint-1"></span>
+									<i class="fas fa-compass"></i>
 								</div>
-								<h6><a href="">Orientation</a></h6>
+								<h6>Orientation</h6>
 								<div class="text">Donnez accès au droit à l’information et à la communication des citoyens selon la constitution Guinéenne</div>
 							</div>
 						</div>
@@ -102,9 +102,9 @@
 							<div class="border-two"></div>
 							<div class="content">
 								<div class="icon-box">
-									<span class="icon flaticon-non-stop-call"></span>
+									<i class="fas fa-headset"></i>
 								</div>
-								<h6><a href="">Assistance/Orientation</a></h6>
+								<h6>Assistance/Orientation</h6>
 								<div class="text">Promouvoir et  vulgariser les informations judiciaires en ligne (décisions de
 									justice, mandats, ordonnances, convocations).</div>
 							</div>
@@ -173,61 +173,59 @@
 		</section>
 		<!-- End News Section -->
 	<!-- About Section -->
-	<section class="about-section">
-		<!-- Image Layer -->
-		<div class="image-layer"></div>
-		<div class="container">
-			<div class="row clearfix">
-				
-				<!-- Content Column -->
-				<div class="content-column col-lg-7 col-md-12 col-sm-12">
-					<div class="inner-column">
-						
-						<!-- Sec Title -->
-						<div class="section-title">
-							<div class="title">A propos de nous</div>
-							<h3>MAGJURY est un magazine juridique qui œuvre pour <span>la promotion</span> et la <span>vulgarisation</span> des actualités Juridiques et pour l’épanouissement de la
-								culture du droit en Guinée et en Afrique.</h3>
-						</div>
-						
-						<div class="text">
-							<p>Dans un monde ouvert à la démocratie, l’information et la communication sont des repères
-								pour les citoyens afin de leur permettre de participer activement au développement sociopolitique, économique et juridique de leur communauté.</p>
-							<p>Le droit à l’information et à la communication sont garanties par la constitution Guinéenne du
-								14 mars 2020, et les conventions internationales, privilégiant les citoyens de trouver la
-								solution à leur situation juridique. C’est pourquoi, www.magjury.org, un magazine juridique
-								qui œuvrera pour la vulgarisation des actualités Juridiques et pour l’épanouissement de la
-								culture du droit en Guinée et en Afrique.</p>
-						</div>
-						<div class="question">Avez-vous une <a href="#">demande</a> <strong>01XXXXXXXXX</strong> <span class="or">or</span> <strong>01XXXXXXXXX</strong></div>
-						
-					</div>
-				</div>
-				
-				<!-- Image Column -->
-				<div class="image-column col-lg-5 col-md-12 col-sm-12">
-					<div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-                             <%= image_tag 'about-2.jpg' %>
-							<div class="overlay-box">
-								<div class="overlay-inner">
-									<div class="content">
-										<h2>35 <span>ans d'expériences</span></h2>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+		<section class="mj-about-section">
+		<div class="mj-about-container">
+			<div class="mj-about-grid">
+
+			<!-- COLONNE GAUCHE : CONTENU -->
+			<div class="mj-about-content">
+				<div class="mj-about-header">
+				<span class="mj-about-tag">À propos de nous</span>
+				<h2 class="mj-about-title">
+					MAGJURY est un magazine juridique qui œuvre pour <span class="mj-about-highlight">la promotion</span> et la <span class="mj-about-highlight">vulgarisation</span> des actualités juridiques en Guinée et en Afrique.
+				</h2>
 				</div>
 
-				
+				<div class="mj-about-text">
+				<p>Dans un monde ouvert à la démocratie, l’information et la communication sont des repères pour les citoyens afin de leur permettre de participer activement au développement sociopolitique, économique et juridique de leur communauté.</p>
+				<p>Le droit à l’information et à la communication est garanti par la constitution Guinéenne du 14 mars 2020, et les conventions internationales, privilégiant les citoyens de trouver la solution à leur situation juridique.</p>
+				</div>
+
+				<!-- ICÔNES CONSEIL / ORIENTATION / ASSISTANCE -->
+				<div class="mj-about-icons mt-4">
+				<div class="mj-about-icon-item">
+					<i class="fas fa-lightbulb"></i>
+					<span>Conseil</span>
+				</div>
+				<div class="mj-about-icon-item">
+					<i class="fas fa-compass"></i>
+					<span>Orientation</span>
+				</div>
+				<div class="mj-about-icon-item">
+					<i class="fas fa-headset"></i>
+					<span>Assistance</span>
+				</div>
+				</div>
+			</div>
+
+			<!-- COLONNE DROITE : IMAGE + STAT -->
+			<div class="mj-about-image">
+				<%= image_tag 'about-2.jpg', class: "mj-about-img", alt: "Équipe MagJury" %>
+				<div class="mj-about-overlay">
+				<div class="mj-about-stat">
+					<span class="mj-about-stat-number">35</span>
+					<span class="mj-about-stat-text">ans d’expérience</span>
+				</div>
+				</div>
+			</div>
+
 			</div>
 		</div>
-	</section>
+		</section>
 	<!-- End About Section -->
 	
 	<!-- Services Section Two -->
-	<section class="services-section-two" style="background-image: url(images/1.jpg);">
+	<section class="services-section-two" style="background-image: url('<%= asset_path("1.jpg") %>');">
 		<div class="container">
 			<!-- Sec Title -->
 			<div class="section-title light centered">
@@ -245,7 +243,7 @@
 							</div>
 							<h3><%= service.title %></h3>
 							<div class="text"><%= raw(truncate(strip_tags(service.description), length: 150)) %></div>
-							<div class="overlay-box" style="background-image: url(images/resource/service-1.jpg);">
+							<div class="overlay-box" style="background-image: url('<%= asset_path("service-2.jpg") %>')">
 								<div class="overlay-inner">
 									<div class="content">
 										<span class="icon flaticon-internet"></span>
@@ -266,8 +264,8 @@
 	
 	<!-- Counter Section -->
 	<section class="counter-section">
-		<div class="icon-one wow zoomIn" data-wow-delay="250ms" data-wow-duration="1500ms" style="background-image:url(images/icons/icon-3.png)"></div>
-		<div class="icon-two wow fadeInRight" data-wow-delay="500ms" data-wow-duration="1500ms" style="background-image:url(images/icons/icon-4.png)"></div>
+		<div class="icon-one wow zoomIn" data-wow-delay="250ms" data-wow-duration="1500ms" style="background-image: url('<%= asset_path("icon-3.png") %>')"></div>
+		<div class="icon-two wow fadeInRight" data-wow-delay="500ms" data-wow-duration="1500ms" style="background-image: url('<%= asset_path("icon-4.png") %>')"></div>
 		<div class="container">
 			<!-- Title Box -->
 			<div class="title-box">
@@ -466,9 +464,9 @@
 						<span class="produit-categorie"><%= raw(truncate(strip_tags(product.description), length: 60)) %></span>
 						
 						<div class="produit-prix">
-							<span class="prix-actuel"><%= number_to_currency(product.current_price, unit: "€") %></span>
+							<span class="prix-actuel"><%= number_to_currency(product.current_price, unit: devise) %></span>
 							<% if product.reduced_price.present? && product.reduced_price > 0 %>
-								<span class="prix-original"><%= number_to_currency(product.price, unit: "€") %></span>
+								<span class="prix-original"><%= number_to_currency(product.price, unit: devise) %></span>
 							<% end %>
 						</div>
 					
@@ -491,6 +489,8 @@
 
 <%end%>
 
+
+<%= render 'layouts/home_footer' %>
 <script>
 // Animation au scroll
 document.addEventListener('DOMContentLoaded', function() {
@@ -513,126 +513,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	
 
-	
-	<!--Main Footer-->
-    <footer class="main-footer">
-    	<div class="container">
-        	<!--Widgets Section-->
-            <div class="widgets-section">
-            	<div class="row clearfix">
-                	
-                    <!--Column-->
-                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
-						<div class="row clearfix">
-						
-                        	<!--Footer Column-->
-                            <div class="footer-column col-lg-7 col-md-6 col-sm-12">
-                                <div class="footer-widget logo-widget">
-									<div class="logo">
-                                        <%= image_tag 'logo.jpg',  style: "width:90px;" %>
-									</div>
-									<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
-									<ul class="list-style-three">
-										<li><span class="icon fa fa-phone"></span> +123 (4567) 890</li>
-										<li><span class="icon fa fa-envelope"></span> info@lawsight.com</li>
-										<li><span class="icon fa fa-home"></span>380 St Kilda Road, Melbourne <br> VIC 3004, Australia</li>
-									</ul>
-								</div>
-							</div>
-							
-							<!--Footer Column-->
-                            <div class="footer-column col-lg-5 col-md-6 col-sm-12">
-                                <div class="footer-widget links-widget">
-									<h4>Liens rapide</h4>
-									<ul class="list-link">
-										<li><a href="">Acceuil</a></li>
-										<li><a href="">Services</a></li>
-										<li><a href="">A Propos</a></li>
-										<li><a href="">Temoignage</a></li>
-										<li><a href="">Actualités</a></li>
-										<li><a href="">Contact</a></li>
-									</ul>
-								</div>
-							</div>
 
-						</div>
-					</div>
-					
-					<!--Column-->
-                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
-						<div class="row clearfix">
-						
-                        	<!--Footer Column-->
-                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                                <div class="footer-widget links-widget">
-									<h4>Support</h4>
-									<ul class="list-link">
-										<li><a href="">Contact</a></li>
-										<li><a href="">Soumettre un ticket</a></li>
-										<li><a href="">Service</a></li>
-										<li><a href="">Support Technique</a></li>
-										<li><a href="">COnditions d'utilisation</a></li>
-										<li><a href="">Professional Services</a></li>
-									</ul>
-								</div>
-							</div>
-							
-							<!--Footer Column-->
-                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                                <div class="footer-widget gallery-widget">
-									<h4>Gallerie</h4>
-									<div class="widget-content">
-										<div class="images-outer clearfix">
-											<!--Image Box-->
-											<figure class="image-box"><a href="images/gallery/1.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %> </a></figure>
-											<!--Image Box-->
-											<figure class="image-box"><a href="images/gallery/2.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %></a></figure>
-											<!--Image Box-->
-											<figure class="image-box"><a href="images/gallery/3.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %></a></figure>
-											<!--Image Box-->
-											<figure class="image-box"><a href="images/gallery/4.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %></a></figure>
-											<!--Image Box-->
-											<figure class="image-box"><a href="images/gallery/5.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %></a></figure>
-											<!--Image Box-->
-											<figure class="image-box"><a href="images/gallery/6.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><%= image_tag 'footer-gallery-thumb-1.jpg' %></a></figure>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-		
-		<!-- Footer Bottom -->
-		<div class="footer-bottom bg-primary text-light">
-			<div class="container">
-				<div class="row clearfix">
-					
-					<!-- Copyright Column -->
-					<div class="copyright-column col-lg-6 col-md-6 col-sm-12">
-						<div class="copyright">2025 &copy; Tous droit réservé KDA <a href="#">KDA</a></div>
-					</div>
-					
-					<!-- Social Column -->
-					<div class="social-column col-lg-6 col-md-6 col-sm-12">
-						<ul>
-							<li class="follow">Suivez-nous: </li>
-							<li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
-							<li><a href="#"><span class="fa fa-twitter-square"></span></a></li>
-							<li><a href="#"><span class="fa fa-linkedin-square"></span></a></li>
-							<li><a href="#"><span class="fa fa-google-plus-square"></span></a></li>
-							<li><a href="#"><span class="fa fa-rss-square"></span></a></li>
-						</ul>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</footer>
 	
 </div>
 <!--End pagewrapper-->

@@ -1,6 +1,7 @@
 # app/controllers/services_controller.rb
 class ServicesController < ApplicationController
   before_action :set_service, only: %i[show edit update destroy]
+  before_action :require_redacteur!, except: [:offre_de_service]
   layout 'dashboard', except: [:offre_de_service]
   def index
     @services = Service.all.order(created_at: :desc)

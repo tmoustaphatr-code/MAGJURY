@@ -19,7 +19,7 @@
 
       <div class="row text-center mb-3">
         <div class="col-6">
-          <div class="fw-bold"><%= number_to_currency(enchere.prix_actuel || enchere.prix_depart, unit: "€", format: "%n") %></div>
+          <div class="fw-bold"><%= number_to_currency(enchere.prix_actuel || enchere.prix_depart, unit: devise, format: "%n") %></div>
           <small class="text-muted">Prix actuel</small>
         </div>
         <div class="col-6">

@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: %i[ show edit update destroy ]
+  before_action :require_redacteur!
   layout 'dashboard'
   # GET /tags or /tags.json
   def index

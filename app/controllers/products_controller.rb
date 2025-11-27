@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
 # app/controllers/products_controller.rb
-before_action :authenticate_user!
-before_action :require_admin!, only: %i[new create edit update destroy]
+before_action :authenticate_user!, except: [:show]
 
 before_action :set_product, only: %i[show edit update destroy]
+before_action :require_admin!, except: [:show]
 
 layout 'dashboard', except: [:show]
 
@@ -54,10 +54,6 @@ private
 
   def set_product
     @product = Product.find(params[:id])
-  end
-
-  def require_admin!
-    redirect_to root_path, alert: "Interdit." unless current_user.admin?
   end
 
 

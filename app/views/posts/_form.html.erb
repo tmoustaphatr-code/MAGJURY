@@ -27,7 +27,7 @@ body{margin:0;background:var(--bg);}
 .toggle-btn{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;}
 .publish-box{display:flex;gap:.5rem;}
 .publish-box button{background:#fff;color:var(--joy);border:none;border-radius:20px;padding:.4rem 1rem;font-weight:600;cursor:pointer;}
-#save-draft-btn{background:none;color:#fff;border:1px solid #fff;}
+#publish-btn{background:none;color:#fff;border:1px solid #fff; padding: 10px; border-radius:15px;}
 .editor-wrapper{flex:1;display:flex;flex-direction:column;padding:1.5rem;}
 #post_title{font-size:2rem;font-weight:700;border:none;border-bottom:2px solid transparent;transition:border .3s;padding:.2rem 0;width:100%;}
 #post_title:focus{outline:none;border-color:var(--joy);}
@@ -53,6 +53,11 @@ body{margin:0;background:var(--bg);}
     <h3>Paramètres</h3>
 
     <!-- IMAGE + PREVIEW -->
+    <div class="field">
+      <%= f.label :status %>
+      <%= f.select :status, Post.statuses.keys.map { |k| [k.humanize, k] } %>
+    </div>
+
     <div class="field">
       <%= f.label :cover_image %>
       <%= f.file_field :cover_image, accept: "image/*", id: "cover_upload" %>
@@ -108,8 +113,7 @@ body{margin:0;background:var(--bg);}
     <div class="top-bar">
       <button type="button" class="toggle-btn" id="toggle-btn">☰</button>
       <div class="publish-box">
-        <button type="button" id="save-draft-btn">Sauver brouillon</button>
-        <%= f.submit "Publier", id: "publish-btn" %>
+        <%= f.submit "SAUVEGARDER", id: "publish-btn" %>
       </div>
     </div>
 
@@ -141,7 +145,6 @@ document.getElementById('cover_upload').addEventListener('change', function (e) 
 });
 
 /* 3. Sauvegarde manuelle – brouillon */
-document.getElementById('save-draft-btn').onclick = () => savePost('draft');
 
 /* 4. Sauvegarde manuelle – publier */
 document.getElementById('publish-btn').onclick = () => savePost('published');

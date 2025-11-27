@@ -49,7 +49,7 @@
             <td><%= image_tag auction.image.presence || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80", class: "rounded", width: 60, alt: "" %></td>
             <td><%= link_to auction.titre, auction_path(auction), target: "_blank", class: "text-decoration-none" %></td>
             <td><%= render "badge_statut", statut: auction.statut %></td>
-            <td><%= number_to_currency(auction.prix_actuel || auction.prix_depart, unit: "€") %></td>
+            <td><%= number_to_currency(auction.prix_actuel || auction.prix_depart, unit: devise) %></td>
             <td><%= auction.bids.size %></td>
             <td><%= l(auction.debut, format: :short) %></td>
             <td><%= l(auction.fin,   format: :short) %></td>

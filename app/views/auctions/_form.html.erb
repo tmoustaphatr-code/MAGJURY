@@ -67,9 +67,9 @@
       <!-- PRIX + LOCALISATION -->
       <div class="row g-3 mb-4">
         <div class="col-md-6">
-          <%= f.label :prix_depart, "Prix de départ (€)", class: "form-label fw-bold" %>
+          <%= f.label :prix_depart, "Prix de départ (#{devise})", class: "form-label fw-bold" %>
           <div class="input-group">
-            <span class="input-group-text">€</span>
+            <span class="input-group-text"><%=devise%></span>
             <%= f.number_field :prix_depart, class: "form-control", min: 0, step: 1000, required: true %>
           </div>
         </div>

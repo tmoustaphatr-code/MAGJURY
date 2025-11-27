@@ -71,7 +71,7 @@
                      { include_blank: "Tous statuts" }, class: "form-select form-select-sm" %>
       </div>
       <div class="col-md-3">
-        <%= f.select :prix_max, options_for_select([["< 50 k€", 50000], ["50-100 k€", 100000], ["100-500 k€", 500000], ["+ 500 k€", 999999999]], params[:prix_max]),
+        <%= f.select :prix_max, options_for_select([["< 50 k#{devise}", 50000], ["50-100 k#{devise}", 100000], ["100-500 k#{devise}", 500000], ["+ 500 k#{devise}", 999999999]], params[:prix_max]),
                      { include_blank: "Tous prix" }, class: "form-select form-select-sm" %>
       </div>
       <div class="col-md-3">
@@ -97,6 +97,8 @@
     </div>
   <% end %>
 </main>
+
+<%= render 'layouts/home_footer' %>
 
 
 <script>

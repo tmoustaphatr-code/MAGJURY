@@ -1,14 +1,45 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
+<h1>Catégories</h1>
 
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
+<!-- FORMULAIRE RAPIDE « AJOUTER » -->
+<div class="card mb-4">
+  <div class="card-body">
+    <%= form_with model: @category || Category.new, url: categories_path, method: :post do |f| %>
+      <div class="row g-2 align-items-end">
+        <div class="col-md-4">
+          <%= f.label :name, 'Nouvelle catégorie', class: 'form-label' %>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Nom…', required: true %>
+        </div>
+        <div class="col-md-2">
+          <%= f.submit 'Créer', class: 'btn btn-primary w-100' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<%= link_to "New category", new_category_path %>
+<!-- LISTE -->
+<table class="table table-hover align-middle">
+  <thead class="table-light">
+    <tr>
+      <th>Nom</th>
+      <th class="text-center">Posts</th>
+      <th class="text-end">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td class="text-center"><span class="badge bg-secondary"><%= category.posts_count %></span></td>
+        <td class="text-end">
+          <%= link_to 'Modifier', edit_category_path(category), class: 'btn btn-sm btn-outline-primary me-1' %>
+          <%= button_to 'Supprimer', category_path(category), method: :delete,
+                        form: { data: { turbo_confirm: 'Vraiment supprimer ?' } },
+                        class: 'btn btn-sm btn-outline-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

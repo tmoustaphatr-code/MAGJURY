@@ -9,8 +9,21 @@ def site_name
   SiteSetting.current.site_name
 end
 
+def site_description
+  SiteSetting.current.description
+end
+
+def site_localisation
+  SiteSetting.current.localisation
+end
+
+
 def currency_symbol
-  SiteSetting.current.currency_symbol
+  SiteSetting.current.currency_symbol || €
+end
+
+def devise
+  SiteSetting.current.currency 
 end
 
 def site_time_zone
@@ -23,6 +36,10 @@ end
 
 def site_whatsapp
   SiteSetting.current.whatsapp
+end
+
+def site_email
+  SiteSetting.current.email
 end
 
 def site_social(network)

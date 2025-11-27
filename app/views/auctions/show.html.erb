@@ -64,7 +64,7 @@
           <hr>
           <div class="row text-center">
             <div class="col-4">
-              <div class="fw-bold fs-5"><%= number_to_currency(@auction.prix_actuel || @auction.prix_depart, unit: "€") %></div>
+              <div class="fw-bold fs-5"><%= number_to_currency(@auction.prix_actuel || @auction.prix_depart, unit: devise) %></div>
               <small class="text-muted">Prix actuel</small>
             </div>
             <div class="col-4">
@@ -86,12 +86,12 @@
             <h5 class="card-title">Placer une enchère</h5>
             <%= form_with url: auction_bids_path(@auction), method: :post, local: true, html: { class: "row g-3" } do |f| %>
               <div class="col-md-8">
-                <%= f.label :montant, "Montant (€)", class: "form-label" %>
+                <%= f.label :montant, "Montant (#{devise})", class: "form-label" %>
                 <%= f.number_field :montant, name: "bid[montant]",
                                    min: @auction.prix_actuel + 1000, step: 1000,
                                    class: "form-control", required: true,
                                    aria: { describedby: "montantHelp" } %>
-                <div id="montantHelp" class="form-text">Minimum : <%= number_to_currency(@auction.prix_actuel + 1000, unit: "€") %></div>
+                <div id="montantHelp" class="form-text">Minimum : <%= number_to_currency(@auction.prix_actuel + 1000, unit: devise) %></div>
               </div>
               <div class="col-md-4 d-flex align-items-end">
                 <%= f.submit "Enchérir", class: "btn btn-warning w-100" %>
@@ -139,7 +139,7 @@
                           <span><%= bid.user.prenom %> <%= bid.user.nom %></span>
                         </div>
                       </td>
-                      <td class="fw-bold"><%= number_to_currency(bid.montant, unit: "€") %></td>
+                      <td class="fw-bold"><%= number_to_currency(bid.montant, unit: devise) %></td>
                       <td><%= l(bid.created_at, format: :short) %></td>
                     </tr>
                   <% end %>

@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
    before_action :authenticate_user!, except: [:show]
+   before_action :require_redacteur!, except: [:show]
+   before_action :prepopulate_from_params, only: %i[ new edit update ]
+
   layout 'dashboard', except: [:show]
   def index
     @posts = Post.all

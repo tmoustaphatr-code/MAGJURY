@@ -1,6 +1,6 @@
 <%# app/views/posts/show.html.erb %>
 
-
+<%= render 'layouts/home_header' %>
 <style>
     :root {
         --magjury-gold: #c9a96e;
@@ -730,18 +730,27 @@
                                 <%= link_to tag.name, '#', class: 'tag' %>
                             <% end %>
                         </div>
-
+                    
                         <!-- Author Bio -->
-                        <div class="author-bio">
-                            <div class="author-bio-content">
-                                <img src="https://ui-avatars.com/api/?name=Marie+Dubois&background=c9a96e&color=fff&size=80" 
-                                     alt="Marie Dubois" class="author-bio-avatar">
+                        <% if @post.user.bio.present? %>
+                            <div class="author-bio">
+                                <div class="author-bio-content">
+                                <% if @post.user.profile.attached? %>
+                                    <%= image_tag @post.user.profile.variant(resize_to_fill: [80, 80]),
+                                                alt: @post.user.full_name,
+                                                class: "author-bio-avatar" %>
+                                <% else %>
+                                    <img src="https://ui-avatars.com/api/?name=<%= CGI.escape(@post.user.full_name) %>&background=c9a96e&color=fff&size=80"
+                                        alt="<%= @post.user.full_name %>" class="author-bio-avatar">
+                                <% end %>
+
                                 <div class="author-bio-text">
                                     <h4>À propos de l'auteur</h4>
-                                    <p>Marie Dubois est avocate au Barreau de Paris, spécialisée en droit des contrats et droit civil. Elle accompagne les entreprises dans la négociation et la rédaction de leurs contrats commerciaux. Elle est également formatrice et conférencière sur les évolutions législatives récentes.</p>
+                                    <p><%= @post.user.bio %></p>
+                                </div>
                                 </div>
                             </div>
-                        </div>
+                        <% end %>
                     </article>
 
                     <!-- Article Navigation -->
@@ -817,7 +826,7 @@
                         <% if @post.user.profile.attached? %>
                             <%= image_tag url_for(@post.user.profile), width: 80, height: 80, crop: :thumb, class: "rounded-circle mb-3", alt: @post.user.nom_complet %>
                         <% else %>
-                            <div class="avatar-circle mb-3"><%= @post.user.initiales %></div>
+                            <div class="avatar-circle mb-3 text-light"><%= @post.user.initiales %></div>
                         <% end %>
 
                         <h5><%= @post.user.nom_complet %></h5>
@@ -863,10 +872,8 @@
     </main>
 
 
+<%= render 'layouts/home_footer' %>
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
 
 <script>
 /* Ajout / réponse / signalement sans reload */

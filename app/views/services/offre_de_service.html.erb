@@ -491,7 +491,7 @@
 
                 <% if service.price.present?%>
                     <div class="service-pricing">
-                        <div class="price-amount"><%= number_to_currency(service.price, unit: "€") %></div>
+                        <div class="price-amount"><%= number_to_currency(service.price, unit: devise) %></div>
                         <div class="price-period"><%= service.price_suffix %></div>
                     </div>
                 <%end%>
@@ -684,52 +684,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="services-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5>Services MAGJURY</h5>
-                    <p>Des solutions juridiques expertes pour les professionnels exigeants.</p>
-                </div>
-                <div class="col-md-2 mb-4">
-                    <h5>Services</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">Consulting</a></li>
-                        <li><a href="#" class="text-light">Rédaction</a></li>
-                        <li><a href="#" class="text-light">Formation</a></li>
-                        <li><a href="#" class="text-light">Audit</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Contact</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-envelope me-2"></i> services@magjury.com</li>
-                        <li><i class="fas fa-phone me-2"></i> +33 1 23 45 67 89</li>
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Paris, France</li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Horaires</h5>
-                    <ul class="list-unstyled">
-                        <li>Lun - Ven: 9h - 18h</li>
-                        <li>Sam: 9h - 12h</li>
-                        <li>Urgences: 24h/24</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2024 MAGJURY Services. Tous droits réservés.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-light me-3"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="text-light"><i class="fab fa-facebook fa-lg"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<%= render 'layouts/home_footer' %>
 
     <!-- Modal Contact -->
     <div class="modal fade" id="contactModal" tabindex="-1">

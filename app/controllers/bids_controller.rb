@@ -1,6 +1,7 @@
 class BidsController < ApplicationController
   before_action :set_bid, only: %i[ show edit update destroy ]
   before_action :set_auction  
+  before_action :authenticate_user!
   # GET /bids or /bids.json
   def index
     @bids = Bid.all
@@ -20,15 +21,14 @@ class BidsController < ApplicationController
   end
 
   # POST /bids or /bids.json
-  before_action :authenticate_user!
-  before_action :set_auction
+  
 
   def create
     @bid = @auction.bids.new(bid_params.merge(user: current_user))
 
     # Vérif montant côté serveur
     if @bid.montant <= @auction.prix_actuel
-      flash[:alert] = "La mise doit être supérieure à #{number_to_currency(@auction.prix_actuel, unit: '€')}."
+      flash[:alert] = "La mise doit être supérieure à #{number_to_currency(@auction.prix_actuel, unit: devise)}."
       redirect_to @auction and return
     end
 

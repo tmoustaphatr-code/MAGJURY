@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :job_offers
-  get "emplois", to: "job_offers#emplois", as: :emplois
+
+  
   resources :product_categories
   resources :products
   get "boutique", to: "boutique#index", as: :boutique
@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get 'profiles/completion_enchere_profile'
   get 'profiles/save_enchere_profile'
  # config/routes.rb
-
+get "emplois", to: "job_offers#emplois", as: :emplois
+resources :job_offers
 get "mes_encheres", to: "auctions#mes_encheres", as: :mes_encheres
 get "offre_de_service", to: "services#offre_de_service", as: :offre_de_service
 resources :services

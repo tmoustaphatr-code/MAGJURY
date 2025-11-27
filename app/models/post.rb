@@ -50,9 +50,15 @@ class Post < ApplicationRecord
   def sync_tags
     return if new_tag_names.nil?
 
-    wanted_names = new_tag_names.split(',').map(&:strip).uniq
-    wanted_tags  = Tag.where(name: wanted_names)
-    # on supprime les liaisons en trop
+    # normalise la liste
+    wanted_names = new_tag_names.split(',').map(&:strip).reject(&:blank?).uniq
+
+    # trouve ou crée chaque tag
+    wanted_tags = wanted_names.map do |name|
+      Tag.find_or_create_by(name: name.downcase)
+    end
+
+    # remplace la collection par celle-ci (associations automatiquement mises à jour)
     self.tags = wanted_tags
   end
   

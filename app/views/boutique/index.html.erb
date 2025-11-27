@@ -601,8 +601,8 @@
       <p class="lead mb-4">Découvrez notre sélection d'œuvres juridiques et judiciaires</p>
       <div class="search-bar mx-auto" style="max-width: 500px;">
         <%= form_with url: boutique_path, method: :get, local: false, html: { class: "input-group" } do |f| %>
-          <%= f.text_field :q, value: params[:q], class: "form-control form-control-lg", placeholder: "Rechercher un produit..." %>
-          <%= f.submit "🔍", class: "btn btn-warning" %>
+          <%= f.text_field :q, value: params[:q], class: "form-control form-control-lg", placeholder: "Rechercher un produit...", style: 'width:80%;'%>
+          <%= f.submit "🔍", class: "btn btn-warning", style: 'width:20%;' %>
         <% end %>
       </div>
     </div>
@@ -763,6 +763,8 @@
             </div>
         </div>
     </div>
+
+    <%= render 'layouts/home_footer' %>
 
     <!-- Notification -->
     <div class="notification" id="notification">

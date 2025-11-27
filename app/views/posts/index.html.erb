@@ -15,7 +15,7 @@
 <div class="container my-4">
   <!-- BARRE & FILTRES -->
   <div class="d-flex justify-content-between align-items-center mb-3">
-    <%= link_to "➕ Nouvel article", new_post_path, class: "btn btn-primary btn-sm" %>
+    <%= link_to "➕ Nouvel article", new_post_path, class: "btn btn-primary btn-sm", data: {turbo: false} %>
     <span class="badge bg-secondary"><%= @posts.count %> articles</span>
   </div>
 
@@ -48,21 +48,21 @@
             <td><%= post.id %></td>
             <td>
               <% if post.cover_image.attached? %>
-                <%= cl_image_tag post.cover_image.key, width: 40, height: 40, crop: :thumb, class: "rounded-circle" %>
+                <%= image_tag url_for(post.cover_image), width: 40, height: 40, crop: :thumb, class: "rounded-circle" %>
               <% else %>
                 <div class="rounded-circle bg-secondary" style="width:40px;height:40px;"></div>
               <% end %>
             </td>
-            <td><%= link_to post.title, post_path(post), target: "_blank", class: "text-decoration-none fw-bold" %></td>
+            <td><%= link_to post.title, post_path(post), class: "text-decoration-none fw-bold",  data: {turbo: false} %></td>
             <td><%= post.category&.name || "—" %></td>
             <td><%= post.tags.map(&:name).join(", ") %></td>
             <td><%= post.views %></td>
             <td><%= post.user&.email || "—" %></td>
-            <td><%= render "admin/posts/badge_status", status: post.status %></td>
+            <td><%= render "posts/badge_status", status: post.status %></td>
             <td>
               <div class="btn-group btn-group-sm">
                 <%= link_to "👁", post_path(post), title: "Voir", class: "btn btn-outline-primary btn-sm" %>
-                <%= link_to "✏", edit_post_path(post), title: "Éditer", class: "btn btn-outline-secondary btn-sm" %>
+                <%= link_to "✏", edit_post_path(post), title: "Éditer", class: "btn btn-outline-secondary btn-sm", data: {turbo: false} %>
                 <%= button_to "🗑", post_path(post), method: :delete,
                               form: { data: { turbo_confirm: "Supprimer cet article ?" } },
                               class: "btn btn-outline-danger btn-sm" %>

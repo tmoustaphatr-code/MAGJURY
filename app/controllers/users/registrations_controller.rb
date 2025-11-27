@@ -53,12 +53,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def after_sign_up_path_for(resource)
-  if resource.bidder?
-    completion_enchere_profile_profile_path(resource)
-  else
-    dashboard_index_path
+    if resource.bidder?
+      completion_enchere_profile_profile_path(resource)
+    elsif resource.admin?
+      dashboard_index_path
+    elsif resource.super_admin?
+      dashboard_index_path
+    elsif resource.redacteur?
+      dashboard_index_path
+    else
+      user_profile_path
+    end
   end
-end
 
    protected
       def configure_permitted_parameters
@@ -89,7 +95,7 @@ end
       end
 
       def account_update_params
-        params.require(:user).permit(:nom, :prenom, :email, :password, :password_confirmation, :current_password)
+        params.require(:user).permit(:nom, :prenom, :email, :password, :password_confirmation, :current_password, :profession, :domaine, :bio, :linkedin, :twitter, :facebook, :instagram, :tiktok)
       end
 
 

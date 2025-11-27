@@ -1,6 +1,8 @@
 class AuctionsController < ApplicationController
   before_action :set_auction, only: %i[ show edit update destroy ]
   layout 'dashboard', except: [:show]
+  before_action :authenticate_user!, except: %i[mes_encheres show]
+  before_action :require_admin!, except: [:mes_encheres, :show]
   # GET /auctions or /auctions.json
  
   def index
@@ -96,10 +98,6 @@ class AuctionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_auction
       @auction = Auction.find(params[:id])
-    end
-
-    def require_admin!
-      redirect_to root_path, alert: "Accès interdit." unless current_user.admin?
     end
 
 

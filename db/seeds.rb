@@ -8,7 +8,7 @@
 # db/seeds/auctions.rb
 
 # Création ou mise à jour de l'admin racine
-admin = User.find_or_create_by!(email: "admin2@magjury.com") do |u|
+admin = User.find_or_create_by!(email: "admin@magjury.com") do |u|
   u.nom = "Admin"
   u.prenom = "Super"
   u.password = "123456"

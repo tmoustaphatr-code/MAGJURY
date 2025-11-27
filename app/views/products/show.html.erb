@@ -64,11 +64,11 @@
           <!-- PRIX -->
           <div class="price-box mb-4">
             <% if @product.reduced_price.present? && @product.reduced_price > 0 %>
-              <span class="text-decoration-line-through text-muted fs-5"><%= number_to_currency(@product.price, unit: "€") %></span>
-              <span class="fs-2 fw-bold text-danger"><%= number_to_currency(@product.reduced_price, unit: "€") %></span>
+              <span class="text-decoration-line-through text-muted fs-5"><%= number_to_currency(@product.price, unit: devise) %></span>
+              <span class="fs-2 fw-bold text-danger"><%= number_to_currency(@product.reduced_price, unit: devise) %></span>
               <span class="badge bg-danger ms-2">-<%= @product.discount_percent %>%</span>
             <% else %>
-              <span class="fs-2 fw-bold text-primary"><%= number_to_currency(@product.price, unit: "€") %></span>
+              <span class="fs-2 fw-bold text-primary"><%= number_to_currency(@product.price, unit: devise) %></span>
             <% end %>
           </div>
 

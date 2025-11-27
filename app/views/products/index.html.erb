@@ -35,7 +35,7 @@
             </td>
             <td class="fw-bold"><%= product.title %></td>
             <td><%= product.product_category&.name || "—" %></td>
-            <td><%= number_to_currency(product.current_price, unit: "€") %></td>
+            <td><%= number_to_currency(product.current_price, unit: devise) %></td>
             <td><%= render "products/badge_status", status: product.status %></td>
             <td><%= product.stock %></td>
             <td>

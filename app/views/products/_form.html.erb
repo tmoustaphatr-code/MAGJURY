@@ -31,12 +31,12 @@
 
             <div class="row g-3">
               <div class="col-md-4">
-                <%= f.label :price, "Prix réel (€)", class: "form-label fw-bold" %>
-                <div class="input-group"><span class="input-group-text">€</span><%= f.number_field :price, class: "form-control", step: 0.01, min: 0, required: true %></div>
+                <%= f.label :price, "Prix réel (#{devise})", class: "form-label fw-bold" %>
+                <div class="input-group"><span class="input-group-text"><%=devise%></span><%= f.number_field :price, class: "form-control", step: 0.01, min: 0, required: true %></div>
               </div>
               <div class="col-md-4">
-                <%= f.label :reduced_price, "Prix réduit (€)", class: "form-label fw-bold" %>
-                <div class="input-group"><span class="input-group-text">€</span><%= f.number_field :reduced_price, class: "form-control", step: 0.01, min: 0 %></div>
+                <%= f.label :reduced_price, "Prix réduit (#{devise})", class: "form-label fw-bold" %>
+                <div class="input-group"><span class="input-group-text"><%=devise%></span><%= f.number_field :reduced_price, class: "form-control", step: 0.01, min: 0 %></div>
               </div>
               <div class="col-md-4">
                 <%= f.label :stock, "Stock", class: "form-label fw-bold" %>

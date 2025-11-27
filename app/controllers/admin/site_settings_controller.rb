@@ -17,14 +17,10 @@ class Admin::SiteSettingsController < ApplicationController
 
   private
 
-  def require_admin!
-    redirect_to root_path, alert: "Interdit." unless current_user.admin?
-  end
-
   def site_setting_params
     params.require(:site_setting).permit(
-      :site_name, :logo, :currency, :time_zone, :tel1, :tel2, :whatsapp,
-      :facebook, :linkedin, :instagram, :tiktok, :youtube, :twitter, :localisation, :devise
+      :site_name, :logo, :currency, :time_zone, :tel1, :tel2, :whatsapp, :description,
+      :facebook, :linkedin, :instagram, :tiktok, :youtube, :twitter, :localisation, :devise, :email
     )
   end
 end

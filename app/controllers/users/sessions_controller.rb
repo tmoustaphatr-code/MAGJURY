@@ -19,10 +19,18 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(resource)
-
-        dashboard_index_path
-
+    if resource.bidder?
+      completion_enchere_profile_profile_path(resource)
+    elsif resource.admin?
+      dashboard_index_path
+    elsif resource.super_admin?
+      dashboard_index_path
+    elsif resource.redacteur?
+      dashboard_index_path
+    else
+      user_profile_path
     end
+  end
 
     # Redirection après déconnexion
     def after_sign_out_path_for(resource_or_scope)

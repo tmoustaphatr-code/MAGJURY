@@ -33,9 +33,9 @@
 
       <!-- PRIX -->
       <div class="produit-prix">
-        <span class="prix-actuel"><%= number_to_currency(product.current_price, unit: "€") %></span>
+        <span class="prix-actuel"><%= number_to_currency(product.current_price, unit: devise) %></span>
         <% if product.reduced_price.present? && product.reduced_price > 0 %>
-          <span class="prix-original"><%= number_to_currency(product.price, unit: "€") %></span>
+          <span class="prix-original"><%= number_to_currency(product.price, unit: devise) %></span>
         <% end %>
       </div>
 
