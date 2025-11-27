@@ -4,7 +4,9 @@ class ProductCategoriesController < ApplicationController
   layout 'dashboard'
   # GET /product_categories or /product_categories.json
   def index
-    @product_categories = ProductCategory.all
+   @product_categories = ProductCategory.left_joins(:products)
+                                       .select('product_categories.*, COUNT(products.id) AS products_count')
+                                       .group('product_categories.id')
   end
 
   # GET /product_categories/1 or /product_categories/1.json
@@ -26,7 +28,7 @@ class ProductCategoriesController < ApplicationController
 
     respond_to do |format|
       if @product_category.save
-        format.html { redirect_to @product_category, notice: "Product category was successfully created." }
+        format.html { redirect_to product_categories_path, notice: "Product category was successfully created." }
         format.json { render :show, status: :created, location: @product_category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +41,7 @@ class ProductCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @product_category.update(product_category_params)
-        format.html { redirect_to @product_category, notice: "Product category was successfully updated.", status: :see_other }
+        format.html { redirect_to product_categories_path, notice: "Product category was successfully updated.", status: :see_other }
         format.json { render :show, status: :ok, location: @product_category }
       else
         format.html { render :edit, status: :unprocessable_entity }
