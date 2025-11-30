@@ -7,6 +7,7 @@ class User < ApplicationRecord
   ROLES = %w[visiteur abonne redacteur admin super_admin bidder]
 
   enum status: { pending: 0, approved: 1, rejected: 2 }
+  validates :password, presence: true, if: :password_required?
 
   has_many :auctions
   has_many :bids
@@ -74,6 +75,10 @@ class User < ApplicationRecord
 
   def initiales
     "#{prenom&.first&.upcase}#{nom&.first&.upcase}"
+  end
+
+  def password_required?
+    new_record? || password.present? || password_confirmation.present?
   end
 
   # Nouvelles relations pour les enchères

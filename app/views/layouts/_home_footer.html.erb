@@ -85,7 +85,7 @@
 										<% @recent_posts.each do |post| %>
 										<figure class="image-box">
 											<a href="<%= post_path(post) %>" class="lightbox-image" data-fancybox="footer-gallery" title="<%= post.title %>">
-											<%= image_tag post.cover_image.attached? ? post.cover_image : "fallback-post.jpg", class: "footer-gallery-thumb", alt: post.title %>
+											<%= image_tag post.cover_image.attached? ? post.cover_image : "bg-loi.jpg", class: "footer-gallery-thumb", alt: post.title %>
 											</a>
 										</figure>
 										<% end %>

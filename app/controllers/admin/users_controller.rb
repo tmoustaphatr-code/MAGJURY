@@ -34,6 +34,7 @@ class Admin::UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to admin_users_path, notice: "Profil mis à jour."
     else
+      puts @user.errors.full_messages
       render :edit
     end
   end
@@ -58,11 +59,16 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+
   def user_params
-  params.require(:user).permit(:nom, :prenom, :email, :blocked, :phone, :address,
-                               :profession, :domaine, :role, :bio, :password,
-                               :password_confirmation, :status,
-                               :linkedin, :twitter, :facebook, :instagram, :tiktok)
-                               .merge(contributor: params[:user][:contributor] == '1')
+    base = params.require(:user).permit(:nom, :prenom, :email, :blocked, :phone, :address,
+                                :profession, :domaine, :role, :bio, :status,
+                                :linkedin, :twitter, :facebook, :instagram, :tiktok)
+                                .merge(contributor: params[:user][:contributor] == '1')
+    if params[:user][:password].present?
+      base.merge(params.require(:user).permit(:password, :password_confirmation))
+    else
+      base
+    end
   end
 end

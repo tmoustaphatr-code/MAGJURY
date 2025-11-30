@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   # Soumission
   def save_enchere_profile
     if current_user.update(profile_params)
-      redirect_to auctions_path, notice: "Profil complet ! Vous pouvez désormais enchérir."
+      redirect_to encheres_path, notice: "Profil complet ! Vous pouvez désormais enchérir."
     else
       render :completion_enchere_profile, status: :unprocessable_entity
     end

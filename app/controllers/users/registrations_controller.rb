@@ -63,7 +63,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
         mes_encheres_path
       else
-        completion_enchere_profile_profile_path(resource)
+        completion_enchere_profile_profile_path
       end
     elsif resource.admin? || resource.super_admin? || resource.redacteur?
       dashboard_index_path

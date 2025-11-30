@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :comments, only: %i[index update destroy]
   end
-  get 'profiles/completion_enchere_profile'
-  get 'profiles/save_enchere_profile'
+  
  # config/routes.rb
 get "emplois", to: "job_offers#emplois", as: :emplois
 resources :job_offers
