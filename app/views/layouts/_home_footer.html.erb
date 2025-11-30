@@ -15,7 +15,15 @@
                             <div class="footer-column col-lg-7 col-md-6 col-sm-12">
                                 <div class="footer-widget logo-widget">
 									<div class="logo">
-                                        <%= image_tag 'logo.jpg',  style: "width:90px;" %>
+                                        <a href="/">
+											<% if SiteSetting.current.logo.attached? %>
+												<%= image_tag SiteSetting.current.logo,
+															alt: "Logo #{site_name}",
+															style: "width:90px;"%>
+											<% else %>
+												<%= image_tag 'logo.jpg', alt: "Logo #{site_name}", style: "width:90px;"%>
+											<% end %>
+										</a>
 									</div>
 									<div class="text">
 										<%if site_description.present?%>

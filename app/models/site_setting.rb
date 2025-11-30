@@ -1,5 +1,7 @@
 # app/models/site_setting.rb
 class SiteSetting < ApplicationRecord
+
+    has_one_attached :logo
   # devises : symboles ISO
   CURRENCIES = {
     "EUR" => "€",

@@ -3,8 +3,13 @@
 		<!-- Logo -->
 		<div class="magjury-logo">
 		<a href="/">
-            <%= image_tag 'logo.jpg'%>
-			<span class="magjury-logo__text"><%= site_name%></span>
+			<% if SiteSetting.current.logo.attached? %>
+				<%= image_tag SiteSetting.current.logo,
+							alt: "Logo #{site_name}",
+							class: "magjury-logo__img" %>
+			<% else %>
+				<%= image_tag 'logo.jpg', alt: "Logo #{site_name}", class: "magjury-logo__img" %>
+			<% end %>
 		</a>
 		</div>
 
