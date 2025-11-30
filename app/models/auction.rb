@@ -5,6 +5,12 @@ class Auction < ApplicationRecord
   has_one_attached :image
   enum statut: { brouillon: 0, bientot: 1, en_cours: 2, terminee: 3 }, _default: :brouillon
 
+  before_validation :init_prix_actuel, on: :create
+
+  def init_prix_actuel
+    self.prix_actuel ||= prix_depart
+  end
+
 scope :publiques, -> { where.not(statut: :brouillon) }
 
 def temps_avant_ouverture
