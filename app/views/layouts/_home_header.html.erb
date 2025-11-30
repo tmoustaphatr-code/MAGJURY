@@ -120,13 +120,6 @@
 	<aside class="magjury-canvas">
 		<div class="magjury-canvas__head">
 		<div class="magjury-canvas__logo">
-            <% if SiteSetting.current.logo.attached? %>
-				<%= image_tag SiteSetting.current.logo,
-							alt: "Logo #{site_name}",
-							class: "magjury-logo__img" %>
-			<% else %>
-				<%= image_tag 'logo.jpg', alt: "Logo #{site_name}", class: "magjury-logo__img" %>
-			<% end %>
 			<span><%=site_name%></span>
 		</div>
 		<button class="magjury-canvas__close" aria-label="Fermer">
