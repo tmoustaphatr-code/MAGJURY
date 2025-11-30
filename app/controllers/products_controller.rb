@@ -17,7 +17,7 @@ end
 
 def create
   @product = Product.new(product_params)
-  @post.user = current_user
+  @product.user = current_user
   if @product.save
     redirect_to products_path, notice: "Produit créé."
   else
