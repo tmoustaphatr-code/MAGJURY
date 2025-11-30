@@ -11,5 +11,6 @@
   <%= f.hidden_field :parent_id, value: parent_id %>
   <%= f.text_area :body, class: 'form-control', rows: 4, placeholder: 'Votre commentaire…', required: true %>
 
-  <button type="submit" class="btn btn-warning">Publier le commentaire</button>
+  <button type="submit" class="btn btn-warning mt-2" data-turbo="false">Publier le commentaire</button>
+ 
 <% end %>
