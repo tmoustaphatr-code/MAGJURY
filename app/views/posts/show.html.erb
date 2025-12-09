@@ -634,7 +634,7 @@
                         <% end %>
                         <div class="author-details">
                             <h4><%=@post.user.nom_complet%></h4>
-                            <p>Avocate spécialisée en droit civil</p>
+                            <p><%=@post.user.profession%></p>
                         </div>
                     </div>
                     <div class="meta-item">
@@ -711,7 +711,6 @@
                          <% if @post.cover_image.attached? %>
                             <div class="article-image">
                                 <p>
-                                    <strong>Cover Image:</strong><br>
                                     <%= image_tag url_for(@post.cover_image), class: "img-thumbnail" %>
                                 </p>
                             </div>
@@ -830,7 +829,7 @@
                         <% end %>
 
                         <h5><%= @post.user.nom_complet %></h5>
-                        <p class="text-muted">Avocate spécialisée en droit civil</p>
+                        <p class="text-muted"><%=@post.user.profession%></p>
                         <p class="small"><%= @post.user.posts.published.count %> articles publiés</p>
 
                         <% if can_edit_post?(@post) %>
